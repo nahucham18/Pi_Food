@@ -4,13 +4,13 @@ const recipesRouter = Router()
 
 const {
     getRecipesHandler,
-    getRecipesBiIdHandler,
+    getRecipesByIdHandler,
     postRecipesHandler,
 } = require('../handlers/recipesHandlers')
 
 recipesRouter.get('/', getRecipesHandler);
 
-recipesRouter.get('/:id', getRecipesBiIdHandler);
+recipesRouter.get('/:id', getRecipesByIdHandler);
 
 recipesRouter.post('/', postRecipesHandler);
 

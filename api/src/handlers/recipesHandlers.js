@@ -1,17 +1,25 @@
-const {createRecipe} = require('../controllers/recipes.controller')
+const {createRecipe ,getRecipeById , getAllRecipes, searchRecipeByName} = require('../controllers/recipes.controller')
 
-const getRecipesHandler = (req,res) =>{
+
+
+
+const getRecipesHandler = async(req,res) =>{
     const { name } = req.query;
-    if(name) res.send(`La receta con nombre ${name}`);
-    else res.send(`Se muestran toda las recetas`);
+    try {
+        const results = name ? searchRecipeByName(name) : await getAllRecipes();
+        res.status(200).json(results);
+        
+    } catch (error) {
+        res.status(403).json({error:error.message})
+    }
 }
 
-const getRecipesBiIdHandler = (req,res)=>{
+const getRecipesByIdHandler = async(req,res)=>{
     const {id} = req.params;
+    const source = isNaN(id) ? "bdd" : "api";
     try {
-        if(isNaN(id)){console.log('Tendria que buscar en la BDD');}
-        else{console.log('Tendria que buscar en la api');}
-        res.send(`Esta Receta es con ID ${id}`)
+        const recipe = await getRecipeById(id,source)
+        res.status(200).json(recipe);
         
     } catch (error) {
         res.status(404).json({error: error.message})
@@ -31,6 +39,6 @@ const postRecipesHandler= async(req,res)=>{
 
 module.exports = {
     getRecipesHandler,
-    getRecipesBiIdHandler,
+    getRecipesByIdHandler,
     postRecipesHandler
 }
