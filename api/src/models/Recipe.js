@@ -32,10 +32,9 @@ module.exports = (sequelize) => {
       type: DataTypes.ARRAY(DataTypes.TEXT),
       allowNull: false,
     },
-    createInDb:{
+    created:{
       type: DataTypes.BOOLEAN,
+      defaultValue:true
     }
-  },{
-    timestamps: false,
-  });
+  },{timestamps: false});
 };
