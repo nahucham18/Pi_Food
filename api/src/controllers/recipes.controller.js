@@ -48,8 +48,8 @@ const getRecipeById = async(id, source) =>{
                 attibutes:[],
         },},
         })
-
-    if(!recipe)throw new Error('No se ecoontro el id')
+    console.log(recipe);
+    if(!recipe)throw new Error('No se econtro el id')
     return recipe;
 }
 
@@ -64,17 +64,19 @@ const getAllRecipes = async() =>{
         }
     })
     const apiRecipesRaw = (
-        await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=ad4d439380c44582aea236553ab88ad0&number=100&addRecipeInformation=true`)
+        await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`)
         ).data
 
     const apiRecipes = cleanArray(apiRecipesRaw.results);
-
+        console.log(apiRecipes);
     return [...databaseRecipes, ...apiRecipes]
 }
 
 const searchRecipeByName = async(name) =>{
     const allRecipes = await getAllRecipes()
+
     const recipeByName = allRecipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));    
+    console.log(recipeByName);
     if(recipeByName.length >0)return recipeByName;
     throw new Error('Recipe not found')
 }

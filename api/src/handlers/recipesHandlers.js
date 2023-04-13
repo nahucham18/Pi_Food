@@ -5,8 +5,10 @@ const {createRecipe ,getRecipeById , getAllRecipes, searchRecipeByName} = requir
 
 const getRecipesHandler = async(req,res) =>{
     const { name } = req.query;
+    console.log(name);
     try {
-        const results = name ? searchRecipeByName(name) : await getAllRecipes();
+        const results = name ? await searchRecipeByName(name) : await getAllRecipes();
+        console.log(results);
         res.status(200).json(results);
     } catch (error) {
         res.status(403).json({error:error.message})
