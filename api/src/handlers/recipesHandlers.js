@@ -8,7 +8,6 @@ const getRecipesHandler = async(req,res) =>{
     try {
         const results = name ? searchRecipeByName(name) : await getAllRecipes();
         res.status(200).json(results);
-        
     } catch (error) {
         res.status(403).json({error:error.message})
     }
@@ -27,10 +26,10 @@ const getRecipesByIdHandler = async(req,res)=>{
 }
 
 const postRecipesHandler= async(req,res)=>{
-    const {name,image,summary,healthScore,steps} = req.body;
-    console.log(healthScore);
+    const {name,image,summary,healthScore,steps, dietTypes} = req.body;
     try {
-        const newRecipe = await createRecipe(name,image,summary,healthScore,steps);
+        
+        const newRecipe = await createRecipe(name,image,summary,healthScore,steps,dietTypes);
         res.status(200).json(newRecipe)
     } catch (error) {
         res.status(400).json(error.message);

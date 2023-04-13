@@ -1,12 +1,13 @@
 const { Router } = require("express");
 
-const recipesRouter = Router()
-
 const {
     getRecipesHandler,
     getRecipesByIdHandler,
     postRecipesHandler,
 } = require('../handlers/recipesHandlers')
+
+const recipesRouter = Router()
+
 
 recipesRouter.get('/', getRecipesHandler);
 

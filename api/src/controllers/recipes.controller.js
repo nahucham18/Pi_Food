@@ -1,4 +1,4 @@
-const { Recipe } = require ('../db');
+const { Recipe, Diet } = require ('../db');
 const axios = require('axios')
 const {API_KEY} = process.env
 
@@ -7,31 +7,64 @@ const cleanArray = (array) =>
         return {
             id:elem.id,
             name:elem.title,
-            image:elem.image,
             summary:elem.summary,
             healthScore:elem.healthScore,
-            steps:elem.analyzedInstructions,
+            diets: elem.diets,
+            image:elem.image,
             create:false,
+            steps:elem.analyzedInstructions[0]?.steps.map((e) => {
+                return {
+                    number: e.number,
+                    step: e.step,
+                    ingredients: e.ingredients,
+                };
+                }),
         }
     });
 
 
-const createRecipe = async(name,image,summary,healthScore,steps)=>
-await Recipe.create({name,image,summary,healthScore,steps})
+const createRecipe = async(name,image,summary,healthScore,steps, dietTypes)=>{
+    if(!name || !summary || !healthScore || !steps ||!dietTypes || !image ) throw new Error ('Missing Data')
+    const newRecipe = await Recipe.create({name,image,summary,healthScore,steps})
+    let getDiet = await Diet.findAll({
+        where:{
+            name: dietTypes,
+        }
+    });
+    return newRecipe.addDiet(getDiet);
+    
+
+}
 
 const getRecipeById = async(id, source) =>{
     const recipe = 
     source === "api" 
         ? (await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}&addRecipeInformation=true`))
             .data
-        : await Recipe.findByPk(id)
+        : await Recipe.findByPk(id,{include:{
+            model: Diet,
+            attibutes:["name"],
+                through:{
+                attibutes:[],
+        },},
+        })
+
+    if(!recipe)throw new Error('No se ecoontro el id')
     return recipe;
 }
 
 const getAllRecipes = async() =>{
-    const databaseRecipes = await Recipe.findAll()
+    const databaseRecipes = await Recipe.findAll({
+        include: {
+            model: Diet,
+            attibutes: ['name'],
+            through:{
+                attibutes:[],
+            }
+        }
+    })
     const apiRecipesRaw = (
-        await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=ad4d439380c44582aea236553ab88ad0&addRecipeInformation=true`)
+        await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=ad4d439380c44582aea236553ab88ad0&number=100&addRecipeInformation=true`)
         ).data
 
     const apiRecipes = cleanArray(apiRecipesRaw.results);
@@ -39,8 +72,11 @@ const getAllRecipes = async() =>{
     return [...databaseRecipes, ...apiRecipes]
 }
 
-const searchRecipeByName =(name) =>{
-
+const searchRecipeByName = async(name) =>{
+    const allRecipes = await getAllRecipes()
+    const recipeByName = allRecipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));    
+    if(recipeByName.length >0)return recipeByName;
+    throw new Error('Recipe not found')
 }
 
 
