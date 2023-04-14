@@ -48,7 +48,6 @@ const getRecipeById = async(id, source) =>{
                 attibutes:[],
         },},
         })
-    console.log(recipe);
     if(!recipe)throw new Error('No se econtro el id')
     return recipe;
 }
@@ -68,7 +67,6 @@ const getAllRecipes = async() =>{
         ).data
 
     const apiRecipes = cleanArray(apiRecipesRaw.results);
-        console.log(apiRecipes);
     return [...databaseRecipes, ...apiRecipes]
 }
 
@@ -76,7 +74,6 @@ const searchRecipeByName = async(name) =>{
     const allRecipes = await getAllRecipes()
 
     const recipeByName = allRecipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));    
-    console.log(recipeByName);
     if(recipeByName.length >0)return recipeByName;
     throw new Error('Recipe not found')
 }
