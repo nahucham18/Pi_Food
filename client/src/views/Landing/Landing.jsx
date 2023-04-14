@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Landing = () =>{
     return (
-        <div>
-            <h1>Estoy en Landing</h1>
-            <Link to={`/home`}>Home page.</Link>
+        <div className={style.container}>
+            <div className={style.landing}>
+                <div className={style.intro}>
+                    <h3 className={style.text_h}>Date el gusto de cocinar,</h3>
+                    <p className={style.text_p}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aspernatur quam recusandae culpa a deleniti eos sit maxime quod tempore vero asperiores accusantium, omnis voluptatem accusamus. Repellendus aliquam necessitatibus ad!</p>
+                    <Link className={style.btn_home}to={`/home`}>Home page</Link>
+                </div>
+            </div>
         </div>
     )
 }

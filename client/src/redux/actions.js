@@ -12,10 +12,10 @@ export const getRecipes = () =>{
     }
 }
 
-export const getRecipe = (id) =>{
-        return async function(dispatch){
-            let recipe = (await axios(`${URL_BASE}/recipes/${id}`)).data
-            console.log(recipe);
-            dispatch({type:GET_RECIPE, payload:recipe})
-        }
-}
+// export const getRecipe = (id) =>{
+//         return async function(dispatch){
+//             let recipe = (await axios(`${URL_BASE}/recipes/${id}`)).data
+//             console.log(recipe);
+//             dispatch({type:GET_RECIPE, payload:recipe})
+//         }
+// }
