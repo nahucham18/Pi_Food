@@ -7,7 +7,7 @@ const Home = () =>{
     const {recipes} = useSelector(state=>state)
     const dispatch = useDispatch();
     useEffect(()=>{
-        recipes.length===0 && dispatch(getRecipes());
+        dispatch(getRecipes());
     },[])
 
     return (
