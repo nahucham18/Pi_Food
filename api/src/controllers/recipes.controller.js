@@ -44,7 +44,7 @@ const getRecipeById = async(id, source) =>{
         : await Recipe.findByPk(id,{include:{
             model: Diet,
             attibutes:["name"],
-                through:{
+            through:{
                 attibutes:[],
         },},
         })

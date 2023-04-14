@@ -10,6 +10,7 @@ module.exports = {
         
         // console.log(dietApi.data.results);
         const diet = dietApi.data.results.map((el) => el.diets);
+        
         let data2 = diet.flat();
         const typeDiet = [...new Set(data2)];
 
