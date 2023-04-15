@@ -29,6 +29,7 @@ const createRecipe = async(name,image,summary,healthScore,steps, dietTypes)=>{
     let getDiet = await Diet.findAll({
         where:{
             name: dietTypes,
+            
         }
     });
     return newRecipe.addDiet(getDiet);

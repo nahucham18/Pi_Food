@@ -1,0 +1,52 @@
+.container{
+    background-color: #E8F3D6;
+}
+.divSearchBar{
+    display: flex;
+    align-items: flex-end;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 1rem;
+    
+}
+
+.search{
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 0.4rem;
+}
+
+.select{
+    background-color: #FCF9BE;
+    border: none;
+    padding:0.6rem 1rem;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+}
+
+.btnCreate{
+    padding:0.6rem 1rem;
+    width: fit-content;
+    background-color: #FCF9BE;
+    border: none;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+}

@@ -10,8 +10,10 @@ const Recipe = (props) =>{
                 <Link className={style.name} to={`/detail/${props.id}`}>
                     <h1 className={style.text_h}>{props.name}</h1>
                 </Link>
-                <h2>{props.healthScore}</h2>
-                <span>{props.diet}</span>
+                <div className={style.descr}>
+                    <span>typeDiet</span>
+                    <span>{props.healthScore}</span>
+                </div>
                 
             </div>
         </div>

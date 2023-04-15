@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_RECIPES, GET_RECIPE } from "./actions-types";
+import { GET_RECIPES, GET_RECIPE, ORDER, GET_PAGE} from "./actions-types";
 
 const URL_BASE = "http://localhost:3001"
 
@@ -10,6 +10,14 @@ export const getRecipes = () =>{
         dispatch({type:GET_RECIPES, payload:recipes});
 
     }
+}
+
+export const getPages = (pages) =>{
+    return {type: GET_PAGE, payload: pages}
+}
+
+export const orderRecipes= (order) =>{
+    return {type:ORDER , payload:order}
 }
 
 // export const getRecipe = (id) =>{
