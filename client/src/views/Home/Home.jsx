@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Pagination from "../../components/Pagination/Pagination";
+import Form from '../Form/Form'
 
 
 const Home = () =>{
@@ -22,12 +23,19 @@ const Home = () =>{
             return acc;
         },[])
     }
+
+    const [create ,setCreate] = useState(false);
     const [page, setPage] = useState(1);
     const arrayPages = paginate(recipes, 9);
 
     const handlePageChange = (page) =>{
         setPage(page);
         console.log(page);
+    }
+
+    const createComponent = () =>{
+        console.log('me clickeo');
+        create ? setCreate(false) : setCreate(true)
     }
 
     useEffect(()=>{
@@ -37,8 +45,11 @@ const Home = () =>{
 
     return (
         <div>
+            {
+                create ? <Form createComponent={createComponent}/> : <></>
+            }
             <Header/>
-            <SearchBar/>
+            <SearchBar createComponent={createComponent}/>
             <Link to={'/'}>Volver landing</Link>
             <Link to={`/create`}>Crear Recipe</Link>
             <RecipesContainer page={page}/>

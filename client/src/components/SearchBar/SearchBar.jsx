@@ -1,15 +1,19 @@
 import { useDispatch } from 'react-redux'
 import style from './SearchBar.module.css'
 import { orderRecipes } from '../../redux/actions'
+import { useState } from 'react'
+import Form from '../../views/Form/Form'
 
-const SearchBar = () =>{
+const SearchBar = ({createComponent}) =>{
     const dispatch = useDispatch()
 
     const handlerOrder = (event) =>{
         const value = event.target.value
         dispatch(orderRecipes(value))
-
     }
+
+
+    const [create, setCreate] = useState(false)
     return (
         <div className={style.container}>
             <div className={style.divSearchBar}>
@@ -57,7 +61,7 @@ const SearchBar = () =>{
                         <option value="">bdd</option>
                     </select>
                 </div>
-                <button className={style.btnCreate}>Craete Recipe</button>
+                <button className={style.btnCreate} onClick={()=>createComponent()}>Craete Recipe</button>
             </div>
             
         </div>
