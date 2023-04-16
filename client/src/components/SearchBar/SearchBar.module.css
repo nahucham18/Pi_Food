@@ -1,4 +1,5 @@
 .container{
+    background-color: #FCF9BE;
     background-color: #E8F3D6;
 }
 .divSearchBar{
@@ -11,8 +12,13 @@
     
 }
 
+.containerSearch{
+    position: relative;
+}
+
 .search{
-    padding: 0.6rem 1rem;
+    background-color: #FCF9BE;
+    padding: 0.6rem 1rem 0.6rem 2rem;
     border: none;
     border-radius: 0.6rem;
     -webkit-border-radius: 0.6rem;
@@ -21,7 +27,20 @@
     -o-border-radius: 0.6rem;
 }
 
+.iconSearch{
+    width: 20px;
+    position: absolute;
+    left: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
 .label{
+
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -29,6 +48,8 @@
 }
 
 .select{
+
+    background-color: #E8F3D6;
     background-color: #FCF9BE;
     border: none;
     padding:0.6rem 1rem;

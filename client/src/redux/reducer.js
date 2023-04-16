@@ -1,7 +1,8 @@
-import { GET_RECIPES, ORDER, GET_PAGE} from "./actions-types";
+import { GET_RECIPES, ORDER, GET_PAGE, GET_COPY} from "./actions-types";
 
 const initialState=({
                     recipes:[],
+                    recipesFilter:[],
                     recipeID:{},
                     pages:[],
 })
@@ -11,7 +12,12 @@ const reducer =(state = initialState,action)=>{
         case GET_RECIPES:
             return {
                 ...state,
-                recipes:action.payload
+                recipes:action.payload,
+            }
+        case GET_COPY:
+            return {
+                ...state,
+                recipesFilter:[...state.recipes],
             }
         case GET_PAGE:
             return {

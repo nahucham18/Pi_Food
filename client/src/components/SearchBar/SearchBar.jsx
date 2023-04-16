@@ -2,7 +2,8 @@ import { useDispatch } from 'react-redux'
 import style from './SearchBar.module.css'
 import { orderRecipes } from '../../redux/actions'
 import { useState } from 'react'
-import Form from '../../views/Form/Form'
+import iconSearch from '../../assets/search-regular-24.png'
+
 
 const SearchBar = ({createComponent}) =>{
     const dispatch = useDispatch()
@@ -17,13 +18,14 @@ const SearchBar = ({createComponent}) =>{
     return (
         <div className={style.container}>
             <div className={style.divSearchBar}>
-                <div>
+                <div className={style.containerSearch}>
                     <input className={style.search} type="text" />
+                    <img className={style.iconSearch} src={iconSearch} alt="icon-search" />
                 </div>
                 <div className={style.label}>
                     <label htmlFor="">Order</label>
                     <select className={style.select} onChange={handlerOrder}>
-                        <option value="order">order</option>x
+                        <option value="Default" selected>Default</option>x
                         <option value="Descendente">Descendente</option>
                         <option value="Ascendente">Ascendente</option>       
                         <option value="A-Z">A-Z</option>       

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import RecipesContainer from "../../components/RecipesContainer/RecipesContainer";
-import { getPages, getRecipes } from "../../redux/actions";
+import { getCopy, getPages, getRecipes } from "../../redux/actions";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
@@ -41,7 +41,8 @@ const Home = () =>{
     useEffect(()=>{
         recipes.length===0 &&  dispatch(getRecipes());
         dispatch(getPages(arrayPages))
-    },[])
+        dispatch(getCopy());
+    },[recipes])
 
     return (
         <div>

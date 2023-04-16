@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_RECIPES, GET_RECIPE, ORDER, GET_PAGE} from "./actions-types";
+import { GET_RECIPES, GET_RECIPE, ORDER, GET_PAGE, GET_COPY} from "./actions-types";
 
 const URL_BASE = "http://localhost:3001"
 
@@ -14,6 +14,10 @@ export const getRecipes = () =>{
 
 export const getPages = (pages) =>{
     return {type: GET_PAGE, payload: pages}
+}
+
+export const getCopy = () =>{
+    return {type: GET_COPY,}
 }
 
 export const orderRecipes= (order) =>{
