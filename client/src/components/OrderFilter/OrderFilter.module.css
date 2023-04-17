@@ -1,0 +1,10 @@
+.orderFilter{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    width: fit-content;
+}
+
+.opc{
+    margin: 0.4rem 0.6rem;
+}

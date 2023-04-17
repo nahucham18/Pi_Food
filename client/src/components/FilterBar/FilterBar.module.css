@@ -1,0 +1,12 @@
+.filterBar{
+    background-color: red;
+    width: fit-content;
+    min-width: 220px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 0;
+}
+
