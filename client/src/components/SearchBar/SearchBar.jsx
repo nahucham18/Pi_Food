@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux'
 import style from './SearchBar.module.css'
 import { orderRecipes } from '../../redux/actions'
-import { useState } from 'react'
 import iconSearch from '../../assets/search-regular-24.png'
 
 
@@ -14,7 +13,7 @@ const SearchBar = ({createComponent}) =>{
     }
 
 
-    const [create, setCreate] = useState(false)
+    
     return (
         <div className={style.container}>
             <div className={style.divSearchBar}>
@@ -25,9 +24,9 @@ const SearchBar = ({createComponent}) =>{
                 <div className={style.label}>
                     <label htmlFor="">Order</label>
                     <select className={style.select} onChange={handlerOrder}>
-                        <option value="Default" selected>Default</option>x
-                        <option value="Descendente">Descendente</option>
+                        <option value="Default" selected>Default</option>
                         <option value="Ascendente">Ascendente</option>       
+                        <option value="Descendente">Descendente</option>
                         <option value="A-Z">A-Z</option>       
                         <option value="Z-A">Z-A</option>       
                     </select>

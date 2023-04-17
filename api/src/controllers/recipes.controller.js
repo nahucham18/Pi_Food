@@ -63,8 +63,11 @@ const getAllRecipes = async() =>{
             }
         }
     })
+    // const apiRecipesRaw = (
+    //     await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`)
+    //     ).data
     const apiRecipesRaw = (
-        await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`)
+        await axios.get(`https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`)
         ).data
 
     const apiRecipes = cleanArray(apiRecipesRaw.results);

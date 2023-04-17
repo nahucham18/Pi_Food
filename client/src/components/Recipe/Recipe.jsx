@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import style from './Recipe.module.css';
 
 const Recipe = (props) =>{
-    console.log(props.diet);
+
+    console.log(props.diets);
     return (
         <div className={style.divRecipe}>
             <div className={style.recipe}>
@@ -11,8 +12,13 @@ const Recipe = (props) =>{
                     <h1 className={style.text_h}>{props.name}</h1>
                 </Link>
                 <div className={style.descr}>
-                    <span>typeDiet</span>
+
                     <span>{props.healthScore}</span>
+                    {
+                        props.diets.map(diet=> {
+                            return <span>{diet}</span>
+                        })
+                    }
                 </div>
                 
             </div>
