@@ -27,7 +27,6 @@ const OrderFilter = () =>{
                     <button value='10' className={style.opc} onClick={handlerHp}>max</button>
                     <button value='0' className={style.opc} onClick={handlerHp}>min</button>
                 </div>
-                
             </div>
         </div>
     )

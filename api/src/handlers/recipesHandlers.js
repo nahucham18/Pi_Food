@@ -28,11 +28,12 @@ const getRecipesByIdHandler = async(req,res)=>{
 
 const postRecipesHandler= async(req,res)=>{
     const {name,image,summary,healthScore,steps, dietTypes} = req.body;
+    console.log({name,image,summary,healthScore,steps,dietTypes});
     try {
         const newRecipe = await createRecipe(name,image,summary,healthScore,steps,dietTypes);
         res.status(200).json(newRecipe)
     } catch (error) {
-        res.status(400).json(error.message);
+        res.status(401).json(error.message);
     }
 }
 

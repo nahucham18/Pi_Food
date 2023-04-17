@@ -15,7 +15,7 @@ const Recipe = (props) =>{
 
                     <span>{props.healthScore}</span>
                     {
-                        props.diets.map(diet=> {
+                        props.diets?.map(diet=> {
                             return <span>{diet}</span>
                         })
                     }
