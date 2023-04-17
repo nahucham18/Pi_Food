@@ -1,4 +1,4 @@
-import { GET_RECIPES, ORDER, GET_PAGE} from "./actions-types";
+import { GET_RECIPES, ORDER, GET_PAGE, FILTER_HEALTH} from "./actions-types";
 
 const initialState=({
                     recipes:[],
@@ -25,23 +25,24 @@ const reducer =(state = initialState,action)=>{
 
 
         case ORDER:
-            if(action.payload === "Ascendente"){
-                console.log(state.recipes);
+            if(action.payload === "Ascendente")
                 return {
                     ...state,
                     recipesFilter: [...state.recipes.slice().sort((a, b) => a.id > b.id)]
-            }
-            }
+                }
+
             if(action.payload === "Descendente")
             return {
                 ...state,
                 recipesFilter: [...state.recipes.slice().sort((a,b)=> a.id < b.id)]
             }
+
             if(action.payload === "A-Z")
             return {
                 ...state,
                 recipesFilter: [...state.recipes.slice().sort((a,b)=> a.name.toLowerCase() > b.name.toLowerCase())]
             }
+
             if(action.payload === "Z-A")
             return {
                 ...state,
@@ -53,6 +54,21 @@ const reducer =(state = initialState,action)=>{
                 recipesFilter:state.recipes
             }
         
+        case FILTER_HEALTH:
+            if(action.payload === '10')
+            return {
+                ...state,
+                recipesFilter: state.recipes.slice().sort((a, b) => a.healthScore < b.healthScore)
+            }
+            if(action.payload === '0')
+            return {
+                ...state,
+                recipesFilter: state.recipes.slice().sort((a,b)=> a.healthScore > b.healthScore)
+            }
+            return {
+                ...state,
+                recipesFilter:state.recipes
+            }
 
         default: return {
                 ...state

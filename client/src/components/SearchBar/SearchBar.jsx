@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import style from './SearchBar.module.css'
-import { orderRecipes } from '../../redux/actions'
+import { filterHealth, orderRecipes } from '../../redux/actions'
 import iconSearch from '../../assets/search-regular-24.png'
 
 
@@ -10,6 +10,10 @@ const SearchBar = ({createComponent}) =>{
     const handlerOrder = (event) =>{
         const value = event.target.value
         dispatch(orderRecipes(value))
+    }
+    const handlerHealth = (event) =>{
+        const value = event.target.value
+        dispatch(filterHealth(value))
     }
 
 
@@ -49,10 +53,10 @@ const SearchBar = ({createComponent}) =>{
                     </select>
                 </div>
                 <div className={style.label}>
-                    <label htmlFor="">Healt</label>
-                    <select className={style.select} name="" id="">
-                        <option value="">menor a mayor</option>
-                        <option value="">mayo a menor</option>
+                    <label htmlFor="">Health</label>
+                    <select className={style.select} onChange={handlerHealth}>
+                        <option value='10'>10-0</option>
+                        <option value='0'>0-10</option>
                     </select>
                 </div>
                 <div className={style.label}>

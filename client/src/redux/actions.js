@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_RECIPES, GET_RECIPE, ORDER, GET_PAGE, GET_COPY} from "./actions-types";
+import { GET_RECIPES, GET_RECIPE, ORDER, GET_PAGE, GET_COPY, FILTER_HEALTH} from "./actions-types";
 
 const URL_BASE = "http://localhost:3001"
 
@@ -22,6 +22,9 @@ export const getCopy = () =>{
 
 export const orderRecipes= (order) =>{
     return {type:ORDER , payload:order}
+}
+export const filterHealth= (order) =>{
+    return {type:FILTER_HEALTH , payload:order}
 }
 
 // export const getRecipe = (id) =>{
