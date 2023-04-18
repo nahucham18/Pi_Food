@@ -1,20 +1,26 @@
 import { Link } from "react-router-dom";
 import style from './Recipe.module.css';
-
-const Recipe = (props) =>{
-
+                            // key={index+1}
+                                // id={recipe.id}
+                                // name={recipe.name}
+                                // image={recipe.image}
+                                // healthScore={recipe.healthScore}
+                                // diets={recipe.diets}
+const Recipe = ({key,id,title,image,healthScore,diets}) =>{
+    console.log(key);
     return (
         <div className={style.divRecipe}>
             <div className={style.recipe}>
-                <img className={style.image} src={props.image} alt={props.name} />
-                <Link className={style.name} to={`/detail/${props.id}`}>
-                    <h1 className={style.text_h}>{props.name}</h1>
+                
+                <img className={style.image} src={image} alt={title} />
+                <Link className={style.name} to={`/detail/${id}`}>
+                    <h1 className={style.text_h}>{title}</h1>
                 </Link>
                 <div className={style.descr}>
 
-                    <span>{props.healthScore}</span>
+                    <span>{healthScore}</span>
                     {
-                        props.diets?.map(diet=> {
+                        diets?.map(diet=> {
                             return <span className={style.diet}>{diet}</span>
                         })
                     }

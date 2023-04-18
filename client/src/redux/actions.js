@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_RECIPES, GET_RECIPE, GET_DIETS, ORDER, GET_PAGE, GET_COPY, FILTER_HEALTH,FILTER_DIETS, SEARCH_RECIPE} from "./actions-types";
+import { GET_RECIPES, GET_RECIPE_ID, GET_DIETS, ORDER, GET_PAGE, GET_COPY, FILTER_HEALTH,FILTER_DIETS, SEARCH_RECIPE} from "./actions-types";
 
 const URL_BASE = "http://localhost:3001"
 
@@ -8,6 +8,14 @@ export const getRecipes = () =>{
     return async function(dispatch){
         let recipes = (await axios(`${URL_BASE}/recipes`)).data
         dispatch({type:GET_RECIPES, payload:recipes});
+
+    }
+}
+export const getRecipeID = (id) =>{
+    return async function(dispatch){
+        let recipes = (await axios(`${URL_BASE}/recipes/${id}`)).data
+        console.log(recipes)
+        dispatch({type:GET_RECIPE_ID, payload:recipes});
 
     }
 }

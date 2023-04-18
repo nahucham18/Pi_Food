@@ -59,7 +59,7 @@ const Home = () =>{
     return (
         <div>
             {
-                create ? <Form createComponent={createComponent}/> : <></>
+                create ? <Form createComponent={createComponent} create={create}/> : <></>
             }
             <Header/>
             <div className={style.down}>

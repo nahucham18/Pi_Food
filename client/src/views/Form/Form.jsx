@@ -2,8 +2,9 @@ import { useState } from 'react';
 import style from './Form.module.css'
 import validation from './validation'
 import axios from 'axios';
+import DietFilter from '../../components/DietFilter/DietFilter';
 
-const Form = ({createComponent}) =>{
+const Form = ({createComponent, create}) =>{
 
     const [steps, setStepts] = useState([])
     const [stepsInput, setSteptsInput] = useState("")
@@ -12,12 +13,16 @@ const Form = ({createComponent}) =>{
         name:'',
         image:'',
         summary:'',
+        healthScore:'',
+        diets:[]
     })
 
     const [errors, setErrors] = useState({
         name:'No hay error',
         image:'No hay error',
         summary:'No hay error',
+        healthScore:'No hay error',
+        diets:[]
     })
 
     const handleOnChage = (event) =>{
@@ -56,15 +61,23 @@ const Form = ({createComponent}) =>{
         event.preventDefault();
     }
 
+    const handleDiets = (diets) =>{
+        setRecipeData({
+            ...recipeData,
+            diets:diets
+        })
+    }
+
+
     
     const handleSumbit = (event) =>{
         const post = {
-            name:recipeData.name,
+                title:recipeData.name,
                 image:recipeData.image,
                 summary:recipeData.summary,
-                healthScore:5,
+                healthScore:recipeData.healthScore,
                 steps:steps,
-                dietTypes:'vegan'
+                dietTypes:recipeData.diets
         }
     
         axios
@@ -76,12 +89,17 @@ const Form = ({createComponent}) =>{
                 console.error("Error al crear receta:", error)
             })
         window.alert('TODO OK')
+        window.alert(post)
+        console.log(post);
         event.preventDefault()
     }
+    console.log(recipeData.diets);
+    
 
     return (
         <div className={style.container}>
             <form className={style.form}action=""onSubmit={handleSumbit}>
+                <DietFilter handleOnChange={handleDiets} create={create}/>
             <button className={style.btnClose} onClick={()=>createComponent()}>x</button>
                 <h2 className={style.title}>Creemos una receta</h2>
                 <div className={style.label}>
@@ -102,7 +120,8 @@ const Form = ({createComponent}) =>{
                 </div>
                 <div className={style.label}>
                     <label  htmlFor="">Health Score: </label>
-                    <input className={style.input} type="text" name="" id="" />
+                    <input className={style.input} type="text" name="healthScore" onChange={handleOnChage}/>
+                    <h6>{errors.healthScore}</h6>
                 </div>
 
 

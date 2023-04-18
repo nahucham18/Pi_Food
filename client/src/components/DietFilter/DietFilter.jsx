@@ -3,8 +3,8 @@ import style from './DietFilter.module.css'
 import { filterDiets } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
-const DietFilter = () =>{
-
+const DietFilter = ({handleOnChange, create}) =>{
+    
     const [selected, setSelected] = useState([]);
 
     const {diets} = useSelector(state=>state)
@@ -16,10 +16,16 @@ const dispatch = useDispatch()
         }else{
             setSelected(selected.filter((diet => diet !== value)))
         }
+        if(create){
+            handleOnChange(selected)
+        }
     }
 
     useEffect(()=>{
-        dispatch(filterDiets(selected))
+        if(!create){
+            dispatch(filterDiets(selected))
+        }
+        
     },[selected])
     return (
         <div>

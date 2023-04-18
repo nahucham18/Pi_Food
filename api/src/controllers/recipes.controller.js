@@ -6,7 +6,7 @@ const cleanArray = (array) =>
         array.map(elem=>{
         return {
             id:elem.id,
-            name:elem.title,
+            title:elem.title,
             summary:elem.summary,
             healthScore:elem.healthScore,
             diets: elem.diets,
@@ -23,9 +23,9 @@ const cleanArray = (array) =>
     });
 
 
-const createRecipe = async(name,image,summary,healthScore,steps, dietTypes)=>{
-    if(!name || !summary || !healthScore || !steps ||!dietTypes || !image ) throw new Error ('Missing Data')
-    const newRecipe = await Recipe.create({name,image,summary,healthScore,steps})
+const createRecipe = async(title,image,summary,healthScore,steps, dietTypes)=>{
+    if(!title || !summary || !healthScore || !steps ||!dietTypes || !image ) throw new Error ('Missing Data')
+    const newRecipe = await Recipe.create({title,image,summary,healthScore,steps})
     let getDiet = await Diet.findAll({
         where:{
             name: dietTypes,

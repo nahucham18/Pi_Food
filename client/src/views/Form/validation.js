@@ -3,6 +3,7 @@ const validation = (recipesData) =>{
         name:'No hay error',
         image:'No hay error',
         summary:'No hay error',
+        healthScore:'No hay error',
     }
 
     if(recipesData.name.length > 40){
@@ -23,6 +24,22 @@ const validation = (recipesData) =>{
     if(!recipesData.summary){
         errors.image = 'No puede estar vacio'
     }
+
+    if(!recipesData.healthScore){
+        errors.healthScore = 'No puede estar vacio'
+    }
+
+    if(isNaN(recipesData.healthScore)=== true){
+        errors.healthScore = 'Tiene que se un numero'
+    }else{
+        errors.healthScore = 'No tiene error'
+    }
+
+    if(recipesData.healthScore > 100 || recipesData.healthScore < 0){
+        errors.healthScore = 'Tiene que ser entre 0 y 100'
+    }
+
+    
 
     return errors;
 }

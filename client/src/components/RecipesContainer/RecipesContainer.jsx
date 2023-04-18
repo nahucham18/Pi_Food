@@ -87,10 +87,11 @@ const RecipesContainer = ({page, recipesFilter}) =>{
         <div className={style.container}>
             <div className={style.recipes_container}>
                 {
-                    recipes?.map(recipe=>{
+                    recipes?.map((recipe,index)=>{
                         return  <Recipe
+                                key={index+1}
                                 id={recipe.id}
-                                name={recipe.name}
+                                title={recipe.title}
                                 image={recipe.image}
                                 healthScore={recipe.healthScore}
                                 diets={recipe.diets}
