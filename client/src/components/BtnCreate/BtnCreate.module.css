@@ -1,9 +1,11 @@
 .titleCreate{
-    margin: 0 0 0.2rem 0;
+    color: #FCF9BE;
+    margin: 0 0 0.4rem 0;
     text-align: start;
 }
 
 .btns{
+    
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
@@ -12,16 +14,38 @@
 }
 
 .btnReset{
-    width: 100%;
+    width: fit-content;
+    font-weight: 900;
+    margin: 0.2rem;
     margin-top: 2rem;
+    border: none;
+    padding:0.2rem 1rem;
+    width: 60%;
+    background-color: #FCF9BE;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
 }
 
 .btnCreate{
     
+    font-weight: 900;
+    margin: 0.2rem;
+    border: none;
+    padding:0.2rem 1rem;
     width: 40%;
-    padding: 0 1rem;
+    background-color: #FCF9BE;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
 }
 
 .container{
     
+    width: 80%;
+    margin: 0 auto;
 }

@@ -8,7 +8,7 @@ const FilterBar = () =>{
 
     const {diets} = useSelector(state=>state)
     return (
-        <div>
+        <div className={style.containerFilter}>
             
                 <div className={style.filterBar}>
                     <div className={style.order}>

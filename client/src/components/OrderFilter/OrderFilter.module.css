@@ -6,6 +6,7 @@
 }
 
 .opc{
+    font-weight: 900;
     margin: 0.2rem;
     border: none;
     padding:0.2rem 2rem;
@@ -19,6 +20,7 @@
 }
 
 .order{
+    color: #FCF9BE;
     margin: 0 0 0.2rem 0;
     text-align: start;
 }

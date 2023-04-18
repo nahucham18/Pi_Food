@@ -1,9 +1,10 @@
 .divRecipe{
     width: 30%;
+    
 }
 .recipe{
     width: 100%;
-    
+    min-height: 360px;
 }
 
 .image {
@@ -15,27 +16,75 @@
     -o-border-radius: 1rem;
 }
 .diet{
-    border: 1px solid red;
+    font-size: 0.8rem;
     display: block;
     color: #ddd;
+    padding: 0.2rem 0.4rem;
+    background-color: gray;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
 }
 
-.name{
+.title{
     text-decoration: none;
     
 }
+
 
 .text_h{
     margin: 0;
     color: #ddd;
     text-align: start;
     font-size: 1rem;
+    width: 100%;
+    
     
 }
 
-.descr{
+.recipeDown{
+    padding-top: 0.6rem ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+.recipeTop{
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.healthScore{
+    padding: 0.2rem;
+    padding-top: 0.1rem;
+    font-weight: 900;
+    background-color: rgb(117, 248, 117);
+    border: 2px solid black;
+
+
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.nohealthScore{
+    padding: 0.2rem;
+    padding-top: 0.1rem;
+    font-weight: 900;
+    background-color: rgb(255, 193, 78);
+    border: 2px solid black;
+    
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }

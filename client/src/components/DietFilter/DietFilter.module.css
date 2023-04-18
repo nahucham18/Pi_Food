@@ -4,7 +4,8 @@
     text-align: start;
     background-color: #FCF9BE;
     width: fit-content;
-    padding: 0.4rem;
+    padding:0.4rem;
+    padding-right: 0.8rem;
     border-radius: 0.6rem;
     -webkit-border-radius: 0.6rem;
     -moz-border-radius: 0.6rem;
@@ -15,5 +16,6 @@
 .diets{
     margin: 0 0 0.4rem 0;
     text-align: start;
+    color: #FCF9BE;
 
 }

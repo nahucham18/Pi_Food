@@ -95,6 +95,8 @@ const RecipesContainer = ({page, recipesFilter}) =>{
                                 image={recipe.image}
                                 healthScore={recipe.healthScore}
                                 diets={recipe.diets}
+                                created={recipe.created}
+                                Diets={recipe.Diets}
                                 
                         />
                     })
