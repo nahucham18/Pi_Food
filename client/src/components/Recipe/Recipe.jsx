@@ -3,7 +3,6 @@ import style from './Recipe.module.css';
 
 const Recipe = (props) =>{
 
-    console.log(props.diets);
     return (
         <div className={style.divRecipe}>
             <div className={style.recipe}>
@@ -16,7 +15,7 @@ const Recipe = (props) =>{
                     <span>{props.healthScore}</span>
                     {
                         props.diets?.map(diet=> {
-                            return <span>{diet}</span>
+                            return <span className={style.diet}>{diet}</span>
                         })
                     }
                 </div>

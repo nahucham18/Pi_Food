@@ -18,7 +18,7 @@ const OrderFilter = () =>{
     return (
         <div>
             <div className={style.orderFilter}>
-                
+                <h4 className={style.order}>Order</h4>
                 <div className={style.orderAbc}>
                     <button value="A-Z" className={style.opc} onClick={handlerOrder}>A-Z</button>
                     <button value="Z-A" className={style.opc} onClick={handlerOrder}>Z-A</button>

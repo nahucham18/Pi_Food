@@ -1,0 +1,27 @@
+.titleCreate{
+    margin: 0 0 0.2rem 0;
+    text-align: start;
+}
+
+.btns{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.btnReset{
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.btnCreate{
+    
+    width: 40%;
+    padding: 0 1rem;
+}
+
+.container{
+    
+}

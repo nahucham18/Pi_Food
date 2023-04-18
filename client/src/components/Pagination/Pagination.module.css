@@ -1,0 +1,30 @@
+.containerPag{
+    
+    width: fit-content;
+    margin: 1rem auto;
+}
+.page{
+    background-color: #FCF9BE;
+    border: none;
+    width: 25px;
+    margin:0 0.2rem;
+    padding: 0.4rem 0;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+}
+
+.pageActive{
+    background-color: #fdf66b;
+    border: none;
+    width: 25px;
+    margin:0 0.2rem;
+    padding: 0.4rem 0;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+}

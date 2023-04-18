@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import style from './Pagination.module.css'
 import { useEffect } from 'react'
 
-const Pagination = ({arrayPages , onPageChange}) =>{
+const Pagination = ({arrayPages , onPageChange, active}) =>{
 
     // const {recipes} = useSelector(state=>state);
 
@@ -25,16 +25,18 @@ const Pagination = ({arrayPages , onPageChange}) =>{
     
 
     return (
-        <div>
+        <div className={style.containerPag}>
+            <button className={style.page}>{"<"}</button>
             {
                 pages.map((page) => {
                     return (
-                    <button key={page} onClick={()=> onPageChange(page)}> 
+                    <button className={(active === true) ? style.pageActive : style.page} key={page} onClick={()=> onPageChange(page)}> 
                         {page}
                     </button>
                     )
                 })
             }
+            <button className={style.page}>{">"}</button>
         </div>
     )
 }

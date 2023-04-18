@@ -39,7 +39,7 @@ export const searchRecipe = (input) =>{
 }
 
 export const filterDiets = (diet) =>{
-    const newFilter = diet.join('');
+    const newFilter = diet.join(',');
     return {type: FILTER_DIETS, payload:newFilter }
 }
 // export const getRecipe = (id) =>{

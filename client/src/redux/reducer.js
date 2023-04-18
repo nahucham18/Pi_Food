@@ -33,14 +33,14 @@ const reducer =(state = initialState,action)=>{
             console.log('wenas');
             return{
                 ...state,
-                recipesFilter: state.recipesFilter.slice().filter(recipe => recipe.name.toLowerCase().includes(action.payload))
+                recipesFilter: state.recipes.filter(recipe => recipe.name.toLowerCase().includes(action.payload))
             }
 
         case ORDER:
             if(action.payload === "Ascendente")
                 return {
                     ...state,
-                    recipesFilter: [...state.recipes.slice().sort((a, b) => a.id > b.id)]
+                    recipesFilter: [...state.recipesFilter.sort((a, b) => a.id > b.id)]
                 }
 
             if(action.payload === "Descendente")
@@ -83,30 +83,21 @@ const reducer =(state = initialState,action)=>{
             }
 
         case FILTER_DIETS: 
-            if(action.payload.length === 0)return{
+            
+        
+            if(action.payload.length === 0){return{
                 ...state,
                 recipesFilter: state.recipes
             }
+            } else{
+                const selectedDiets = action.payload.split(",");
+                console.log(selectedDiets);
             return {
                 ...state,
-                recipesFilter: state.recipes.slice().filter((elem)=> action.payload.includes(elem.diets) && elem.diets.length !== 0
+                recipesFilter: state.recipes.filter((elem)=> selectedDiets.every((selectedDiets)=> elem.diets.includes(selectedDiets))
                 )
             }
-        //     if(action.payload === 'vegetarian')
-        //     return {
-        //         ...state,
-        //         recipesFilter: state.recipes.slice().filter(recipe =>  )
-        //     }
-        //     if(action.payload === 'gluten free')
-        //     if(action.payload === 'dairy free')
-        //     if(action.payload === 'lacto ovo vegetarian')
-        //     if(action.payload === 'vegan')
-        //     if(action.payload === 'paleolithic')
-        //     if(action.payload === 'primal')
-        //     if(action.payload === 'whole 30')
-        //     if(action.payload === 'percatarian')
-        //     if(action.payload === 'ketogenic')
-        //     if(action.payload === 'fodmap friendly')
+        }
 
         default: return {
                 ...state

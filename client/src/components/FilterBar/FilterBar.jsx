@@ -2,11 +2,11 @@ import { useSelector } from 'react-redux'
 import style from './FilterBar.module.css'
 import DietFilter from '../DietFilter/DietFilter';
 import OrderFilter from '../OrderFilter/OrderFilter';
+import BtnCreate from '../BtnCreate/BtnCreate';
 
 const FilterBar = () =>{
 
     const {diets} = useSelector(state=>state)
-    console.log('hola estas son las dietas',diets);
     return (
         <div>
             
@@ -17,11 +17,10 @@ const FilterBar = () =>{
                     <div>
                         <DietFilter/>
                     </div>
-                    <div className={style.create}>
-                    <button>Api</button>
-                    <button>BDD</button>
-                </div>
-                    <button>RESET</button>
+                    <div>
+                        <BtnCreate/>
+                    </div>
+                    
                 </div>
             
         </div>

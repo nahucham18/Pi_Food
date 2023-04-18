@@ -1,8 +1,9 @@
 .filterBar{
-    background-color: red;
+    background-color: rgba(1, 1, 1, 0.5);
     width: fit-content;
-    min-width: 220px;
-    margin-top: 1rem;
+    min-width: 280px;
+    margin-top: 2rem;
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;

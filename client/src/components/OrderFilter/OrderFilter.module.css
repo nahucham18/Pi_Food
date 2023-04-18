@@ -1,10 +1,24 @@
 .orderFilter{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background-color: green;
     width: fit-content;
 }
 
 .opc{
-    margin: 0.4rem 0.6rem;
+    margin: 0.2rem;
+    border: none;
+    padding:0.2rem 2rem;
+    width: 45%;
+    background-color: #FCF9BE;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+}
+
+.order{
+    margin: 0 0 0.2rem 0;
+    text-align: start;
 }

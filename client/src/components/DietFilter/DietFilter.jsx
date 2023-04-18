@@ -17,13 +17,13 @@ const dispatch = useDispatch()
             setSelected(selected.filter((diet => diet !== value)))
         }
     }
-    console.log(selected);
 
     useEffect(()=>{
         dispatch(filterDiets(selected))
     },[selected])
     return (
         <div>
+            <h4 className={style.diets}>Diets</h4>
             <div className={style.filterDiets}>
                 {
                     diets.map((diet)=>{

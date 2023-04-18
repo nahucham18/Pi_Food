@@ -20,6 +20,7 @@ const Home = () =>{
     const {recipes} = useSelector(state=>state)
     const {diets} = useSelector(state=>state)
     const {recipesFilter} = useSelector(state=>state)
+    const [active, setActive] = useState(false)
     
     const paginate = (array,pagesSize)=>{
         return array.reduce((acc,val,index)=>{
@@ -35,6 +36,8 @@ const Home = () =>{
     
     const handlePageChange = (page) =>{
         setPage(page);
+        setActive(true)
+        console.log(active);
     }
 
     const createComponent = () =>{
@@ -64,10 +67,9 @@ const Home = () =>{
                 <div className={style.principal}>
                     <SearchBar createComponent={createComponent} filtrar={handlerFiltrar}/>
                     <Link to={'/'}>Volver landing</Link>
-                    <Link to={`/create`}>Crear Recipe</Link>
                     <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange}/>
                     <RecipesContainer page={page} recipesFilter={recipesFilter}/>
-                    <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange}/>
+                    <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active}/>
                 </div>
             </div>
         </div>

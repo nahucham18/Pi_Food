@@ -3,8 +3,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 2rem;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    background-color: rgba(1, 1, 1, 0.8);
+    padding: 2rem 1rem;
+
     
 }
 
