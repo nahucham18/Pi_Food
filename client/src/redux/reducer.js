@@ -39,7 +39,7 @@ const reducer =(state = initialState,action)=>{
             console.log('wenas');
             return{
                 ...state,
-                recipesFilter: state.recipes.filter(recipe => recipe.name.toLowerCase().includes(action.payload))
+                recipesFilter: state.recipes.filter(recipe => recipe.title.toLowerCase().includes(action.payload))
             }
 
         case ORDER:
@@ -58,13 +58,13 @@ const reducer =(state = initialState,action)=>{
             if(action.payload === "A-Z")
             return {
                 ...state,
-                recipesFilter: [...state.recipes.slice().sort((a,b)=> a.name.toLowerCase() > b.name.toLowerCase())]
+                recipesFilter: [...state.recipes.slice().sort((a,b)=> a.title.toLowerCase() > b.title.toLowerCase())]
             }
 
             if(action.payload === "Z-A")
             return {
                 ...state,
-                recipesFilter: [...state.recipes.slice().sort((a,b)=> a.name.toLowerCase() < b.name.toLowerCase())]
+                recipesFilter: [...state.recipes.slice().sort((a,b)=> a.title.toLowerCase() < b.title.toLowerCase())]
             }
 
             return {
@@ -94,13 +94,12 @@ const reducer =(state = initialState,action)=>{
             if(action.payload.length === 0){return{
                 ...state,
                 recipesFilter: state.recipes
-            }
-            } else{
+            }} else{
                 const selectedDiets = action.payload.split(",");
                 console.log(selectedDiets);
             return {
                 ...state,
-                recipesFilter: state.recipes.filter((elem)=> selectedDiets.every((selectedDiets)=> elem.diets.includes(selectedDiets))
+                recipesFilter: state.recipes.filter((elem)=> selectedDiets.every((selectedDiets)=> elem.diets?.includes(selectedDiets))
                 )
             }
         }

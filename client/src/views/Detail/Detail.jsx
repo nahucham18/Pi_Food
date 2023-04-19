@@ -32,7 +32,7 @@ const Detail = () =>{
             <div className={style.detail}>
                 <div className={style.leftUp}>
                 <h1>{recipeID.title}</h1>
-                <p>{recipeID.summary}</p>
+                <p>{recipeID.summary?.replace(/<[^>]*>/g, "")}</p>
 
                 </div>
                 <img src={recipeID.image} alt="" />

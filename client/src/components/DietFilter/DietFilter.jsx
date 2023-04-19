@@ -8,7 +8,7 @@ const DietFilter = ({handleOnChange, create}) =>{
     const [selected, setSelected] = useState([]);
 
     const {diets} = useSelector(state=>state)
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
     const handleDietChange = (event) =>{
         const { value, checked} = event.target;
         if(checked){
@@ -16,17 +16,18 @@ const dispatch = useDispatch()
         }else{
             setSelected(selected.filter((diet => diet !== value)))
         }
+        
+    }
+    useEffect(()=>{
         if(create){
             handleOnChange(selected)
         }
-    }
-
-    useEffect(()=>{
         if(!create){
             dispatch(filterDiets(selected))
         }
         
     },[selected])
+    
     return (
         <div>
             <h4 className={style.diets}>Diets</h4>

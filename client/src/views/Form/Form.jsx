@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from './Form.module.css'
 import validation from './validation'
 import axios from 'axios';
@@ -17,6 +17,7 @@ const Form = ({createComponent, create}) =>{
         diets:[]
     })
 
+
     const [errors, setErrors] = useState({
         name:'No hay error',
         image:'No hay error',
@@ -31,6 +32,8 @@ const Form = ({createComponent, create}) =>{
             [event.target.name]: event.target.value
         })
 
+    
+    
         setErrors(validation({
             ...recipeData,
             [event.target.name]: event.target.value,
@@ -93,7 +96,8 @@ const Form = ({createComponent, create}) =>{
         console.log(post);
         event.preventDefault()
     }
-    console.log(recipeData.diets);
+    
+
     
 
     return (

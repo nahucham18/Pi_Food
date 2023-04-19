@@ -1,4 +1,5 @@
 .container{
+    box-sizing: border-box;
     position: absolute;
     margin: o auto;
     height: 70px;
@@ -30,8 +31,39 @@
     -o-transition: .3s;
 }
 
+.menu{
+    box-sizing: border-box;
+    width: 300px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .link{
+    display: block;
+    width: fit-content;
+    box-sizing: border-box;
     margin: 0 1rem;
     text-decoration: none;
     color: #111;
+
+}
+.link:hover{
+    border-bottom: 1px solid black;
+}
+
+.about{
+    color: #fff;
+    background-color: rgba(1, 1, 1, 0.9);
+    padding:0.8rem 1rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.about:hover{
+    cursor: pointer;
+    background-color: rgba(37, 37, 37, 0.9);
 }

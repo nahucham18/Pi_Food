@@ -11,7 +11,7 @@ const cleanArray = (array) =>
             healthScore:elem.healthScore,
             diets: elem.diets,
             image:elem.image,
-            create:false,
+            created:false,
             steps:elem.analyzedInstructions[0]?.steps.map((e) => {
                 return {
                     number: e.number,
@@ -29,9 +29,10 @@ const createRecipe = async(title,image,summary,healthScore,steps, dietTypes)=>{
     let getDiet = await Diet.findAll({
         where:{
             name: dietTypes,
-            
-        }
+        },
+        attibutes:['name'],
     });
+
     return newRecipe.addDiet(getDiet);
     
 
@@ -50,6 +51,54 @@ const getRecipeById = async(id, source) =>{
         },},
         })
     if(!recipe)throw new Error('No se econtro el id')
+        if(!recipe.created ){       
+            const cleanRecipe = {
+            titple: recipe.title,
+            image: recipe.image,
+            diets:recipe.diets,
+            summary: recipe.summary,
+            steps: recipe.steps,
+            healthScore: recipe.healthScore,
+            pricePerServing: recipe.pricePerServing,
+            servings: recipe.servings,
+            readyInMinutes: recipe.readyInMinutes,
+            create: recipe.create,
+            steps:recipe.analyzedInstructions[0]?.steps.map((e) => {
+                return {
+                    number: e.number,
+                    step: e.step,
+                    ingredients: e.ingredients,
+                };
+                })
+            
+            
+        }
+        return cleanRecipe
+        }
+        else{
+            const cleanRecipe = {
+                title: recipe.title,
+                image: recipe.image,
+                summary: recipe.summary,
+                diets:recipe?.Diets?.map(diet=> diet.name),
+                healthScore: recipe.healthScore,
+                // pricePerServing: recipe.pricePerServing,
+                // servings: recipe.servings,
+                // readyInMinutes: recipe.readyInMinutes,
+                created: recipe.created,
+                steps:recipe?.steps?.map((e,index) => {
+                    return {
+                        number: index + 1,
+                        step: e,
+                        // ingredients: e.ingredients,
+                    };
+                    })
+                
+                
+            }
+            return cleanRecipe
+        }
+
     return recipe;
 }
 

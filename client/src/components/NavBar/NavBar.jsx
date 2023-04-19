@@ -25,7 +25,7 @@ const NavBar = () =>{
                     <Link className={style.link} to={'/'}>Diets</Link>
                     <Link className={style.link} to="/about">About</Link>
                 </div>
-                <div>
+                <div className={style.about}>
                     conocenos
                 </div>
             </nav>
