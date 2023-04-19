@@ -1,5 +1,6 @@
 import style from './Landing.module.css'
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.png'
 
 const Landing = () =>{
     return (
@@ -10,6 +11,7 @@ const Landing = () =>{
                     <p className={style.text_p}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aspernatur quam recusandae culpa a deleniti eos sit maxime quod tempore vero asperiores accusantium, omnis voluptatem accusamus. Repellendus aliquam necessitatibus ad!</p>
                     <Link className={style.btn_home}to={`/home`}>Home page</Link>
                 </div>
+                <img className={style.image} src={logo} alt="" />
             </div>
         </div>
     )

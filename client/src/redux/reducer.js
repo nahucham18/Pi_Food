@@ -1,4 +1,4 @@
-import { GET_RECIPES,GET_RECIPE_ID, ORDER, GET_PAGE, GET_DIETS, FILTER_HEALTH, SEARCH_RECIPE, FILTER_DIETS} from "./actions-types";
+import { GET_RECIPES,GET_RECIPE_ID, ORDER, GET_PAGE, GET_DIETS, FILTER_HEALTH, SEARCH_RECIPE, FILTER_DIETS, FILTER_CREATE} from "./actions-types";
 
 const initialState=({
                     recipes:[],
@@ -101,6 +101,25 @@ const reducer =(state = initialState,action)=>{
                 ...state,
                 recipesFilter: state.recipes.filter((elem)=> selectedDiets.every((selectedDiets)=> elem.diets?.includes(selectedDiets))
                 )
+            }
+        }
+
+        case FILTER_CREATE:{
+            if(action === 'all')return{
+                ...state,
+                recipesFilter: state.recipes,
+            }
+            if(action.payload === 'api')return{
+                ...state,
+                recipesFilter: state.recipes.filter(recipe=>recipe.created === false)
+            }
+            if(action.payload === 'bdd')return{
+                ...state,
+                recipesFilter: state.recipes.filter(recipe=>recipe.created === true)
+            }
+            return {
+                ...state,
+                recipesFilter:state.recipes,
             }
         }
 

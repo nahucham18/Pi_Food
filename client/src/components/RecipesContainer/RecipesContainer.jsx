@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import Recipe from "../Recipe/Recipe";
 import style from './RecipesContainer.module.css'
+import { useEffect } from "react";
 
 const RecipesContainer = ({page, recipesFilter}) =>{
 
@@ -81,13 +82,15 @@ const RecipesContainer = ({page, recipesFilter}) =>{
     //         ]
     //     },
     //     ]
+
     const {pages} = useSelector(state=>state)
-    const recipes = pages[page-1];
+
+    const AllRecipes = pages[page-1];
     return (
         <div className={style.container}>
             <div className={style.recipes_container}>
                 {
-                    recipes?.map((recipe,index)=>{
+                    AllRecipes?.map((recipe,index)=>{
                         return  <Recipe
                                 key={index+1}
                                 id={recipe.id}

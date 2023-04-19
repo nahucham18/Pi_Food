@@ -9,6 +9,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Pagination from "../../components/Pagination/Pagination";
 import Form from '../Form/Form'
 import FilterBar from "../../components/FilterBar/FilterBar";
+import Loading from '../../components/Loading/Loading';
 
 
 
@@ -67,7 +68,10 @@ const Home = () =>{
                 <div className={style.principal}>
                     <SearchBar createComponent={createComponent} filtrar={handlerFiltrar}/>
                     <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active} page={page}/>
-                    <RecipesContainer page={page} recipesFilter={recipesFilter}/>
+                    {
+                        recipes.length !== 0 ? <RecipesContainer page={page} recipesFilter={recipesFilter}/> 
+                        : <Loading/>
+                    }
                     <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active}/>
                 </div>
             </div>

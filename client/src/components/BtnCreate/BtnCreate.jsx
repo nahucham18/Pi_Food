@@ -1,14 +1,22 @@
+import { useDispatch } from 'react-redux'
 import style from './BtnCreate.module.css'
+import { filterCreate } from '../../redux/actions'
 
 const BtnCreate = () =>{
+
+    const dispatch = useDispatch()
+
+    const handleCreate = (event) =>{
+        dispatch(filterCreate(event.target.value))
+    }
     return (
         <div className={style.container}>
                     <h4 className={style.titleCreate}>Create</h4>
             <div className={style.btns}>
-                    <button className={style.btnCreate}>Api</button>
-                    <button className={style.btnCreate}>BDD</button>
+                    <button className={style.btnCreate} onClick={handleCreate} value="api">Api</button>
+                    <button className={style.btnCreate} onClick={handleCreate} value="bdd">BDD</button>
 
-                    <button className={style.btnReset}>RESET ALL</button>
+                    <button className={style.btnReset} onClick={handleCreate} value="all">RESET ALL</button>
             </div>
         </div>
     )

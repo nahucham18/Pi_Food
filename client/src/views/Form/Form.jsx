@@ -14,7 +14,12 @@ const Form = ({createComponent, create}) =>{
         image:'',
         summary:'',
         healthScore:'',
-        diets:[]
+        diets:[],
+        readyInMinutes:0,
+        servings:0,
+        pricePerServing:0,
+
+
     })
 
 
@@ -23,7 +28,10 @@ const Form = ({createComponent, create}) =>{
         image:'No hay error',
         summary:'No hay error',
         healthScore:'No hay error',
-        diets:[]
+        diets:[],
+        readyInMinutes:'No hay error',
+        servings:'No hay error',
+        pricePerServing:'No hay error',
     })
 
     const handleOnChage = (event) =>{
@@ -103,52 +111,92 @@ const Form = ({createComponent, create}) =>{
     return (
         <div className={style.container}>
             <form className={style.form}action=""onSubmit={handleSumbit}>
-                <DietFilter handleOnChange={handleDiets} create={create}/>
             <button className={style.btnClose} onClick={()=>createComponent()}>x</button>
+                
                 <h2 className={style.title}>Creemos una receta</h2>
-                <div className={style.label}>
-                    <label  htmlFor="">Name: </label>
-                    <input className={style.input} type="text" name="name" onChange={handleOnChage} />
-                    <h6>{errors.name}</h6>
+                    <hr />
+                <div className={style.Up}>
+
+                    <div className={style.leftUp}>
+                        <div className={style.infoMain}>
+                            <div className={style.labelInfoMain}>
+                                <label  htmlFor=""><h4 className={style.titleLabel}>Name: </h4></label>
+                                <input className={style.input} type="text"      name="name" onChange={handleOnChage} />
+                                <h6 className={style.error}>{errors.name}</h6>
+                            </div>
+                            <div className={style.labelInfoMain}>
+                                <label  htmlFor=""><h4 className={style.titleLabel}>URL Image: </h4></label>
+                                <input className={style.input} type="text" name="image" onChange={handleOnChage}/>
+                            <h6 className={style.error}>{errors.image}</h6>
+                            </div>
+                            <div className={style.labelInfoMain}>
+                                <label  htmlFor=""><h4 className={style.titleLabel}>Health Score: </h4> </label>
+                                <input className={style.inputHealth} type="text" name="healthScore" onChange={handleOnChage}/>
+                                <h6 className={style.error}>{errors.healthScore}</h6>
+                            </div>
+                            <div className={style.labelInfoMain}>
+                                <label  htmlFor=""><h4 className={style.titleLabel}>Summary: </h4></label>
+                                <textarea className={style.input} type="text" name="summary" onChange={handleOnChage} />
+                                <h6 className={style.error}>{errors.summary}</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div className={style.rightUp}>
+                    <DietFilter handleOnChange={handleDiets} create={create}/>
+
+                    </div>
+
                 </div>
-                <div className={style.label}>
-                    <label  htmlFor="">Image: </label>
-                    <input className={style.input} type="text" name="image" onChange={handleOnChage}/>
-                    <h6>{errors.image}</h6>
+                    <hr />
+                <div className={style.down}>
+
+                    <div className={style.leftDown}>
+                    <div className={style.labelInfoMain}>
+                                <label  htmlFor=""><h4 className={style.titleLabel}>Time in Minutes:</h4></label>
+                                <input className={style.input} type="text"      name="readyInMinutes" onChange={handleOnChage} />
+                                <h6 className={style.error}>{errors.readyInMinutes}</h6>
+                            </div>
+                            <div className={style.labelInfoMain}>
+                                <label  htmlFor=""><h4 className={style.titleLabel}>Servings:</h4></label>
+                                <input className={style.input} type="text" name="servings" onChange={handleOnChage}/>
+                            <h6 className={style.error}>{errors.servings}</h6>
+                            </div>
+                            <div className={style.labelInfoMain}>
+                                <label  htmlFor=""><h4 className={style.titleLabel}>Price per serving:</h4> </label>
+                                <input className={style.input} type="text" name="pricePerServing" onChange={handleOnChage}/>
+                                <h6 className={style.error}>{errors.pricePerServing}</h6>
+                            </div>
+
+                    </div>
+
+                <div className={style.rightDown}>
+                        <div className={style.labelDown}>
+                            <label  htmlFor=""><h4 className={style.titleLabel}>Steps:</h4> </label>
+                                <textarea className={style.textareaStep} type="text" name='steps' value={stepsInput} onChange={handleSteps}></textarea>
+                                    <div className={style.btnsSteps}>
+                                        <button onClick={moreSteps}>More</button>
+                                        <button onClick={deleteStep}>Delete Last</button>
+                                        <button onClick={deleteAllSteps}>Delete all</button>
+                                    </div>
+                        </div>
+                        <div className={style.labelDown}>
+                            <h4 className={style.titleLabel}>List Steps:</h4>
+                                <div className={style.steps}>
+                                    {
+                                    steps.map((step,index)=>{
+                                    return(
+                                    <span className={style.step}>{`${index+1}. ${step}`}</span>
+                                    )
+                                    })
+                                    }
+                                </div>
+                        </div>
+                    </div>
                     
                 </div>
-                <div className={style.label}>
-                    <label  htmlFor="">Summary: </label>
-                    <textarea className={style.input} type="text" name="summary" onChange={handleOnChage} />
-                    <h6>{errors.summary}</h6>
-                </div>
-                <div className={style.label}>
-                    <label  htmlFor="">Health Score: </label>
-                    <input className={style.input} type="text" name="healthScore" onChange={handleOnChage}/>
-                    <h6>{errors.healthScore}</h6>
-                </div>
 
-
-
-
-                <div className={style.label}>
-                    <label  htmlFor="">Steps: </label>
-                    <textarea type="text" name='steps' value={stepsInput} onChange={handleSteps}></textarea>
-                    <button onClick={moreSteps}>more</button>
-                    <button onClick={deleteStep}>Delete Last</button>
-                    <button onClick={deleteAllSteps}>Delete all</button>
-                </div>
-                <div className={style.label}>
-                    <h3>List Steps:</h3>
-                    {
-                        steps.map((step,index)=>{
-                            return(
-                                <span>{`${index+1}. ${step}`}</span>
-                            )
-                        })
-                    }
-
-                </div>
 
                 <button className={style.btnCreate}>Crear receta</button>
                 </form>

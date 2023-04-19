@@ -23,9 +23,9 @@ const cleanArray = (array) =>
     });
 
 
-const createRecipe = async(title,image,summary,healthScore,steps, dietTypes)=>{
+const createRecipe = async(title,image,summary,healthScore,steps,readyInMinutes,servings,pricePerServing, dietTypes)=>{
     if(!title || !summary || !healthScore || !steps ||!dietTypes || !image ) throw new Error ('Missing Data')
-    const newRecipe = await Recipe.create({title,image,summary,healthScore,steps})
+    const newRecipe = await Recipe.create({title,image,summary,healthScore,steps,readyInMinutes,servings,pricePerServing})
     let getDiet = await Diet.findAll({
         where:{
             name: dietTypes,
@@ -53,7 +53,7 @@ const getRecipeById = async(id, source) =>{
     if(!recipe)throw new Error('No se econtro el id')
         if(!recipe.created ){       
             const cleanRecipe = {
-            titple: recipe.title,
+            title: recipe.title,
             image: recipe.image,
             diets:recipe.diets,
             summary: recipe.summary,

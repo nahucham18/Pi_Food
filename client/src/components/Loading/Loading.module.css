@@ -1,0 +1,69 @@
+.loading{
+    background-color: rgba(1, 1, 1, 0.6);
+    width: 100%;
+    position: relative;
+}
+
+.image{
+    width: 50%;
+}
+
+.loadingGif {
+    position: absolute;
+    bottom: 4%;
+    right: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    
+    }
+
+    .dot1 {
+    animation: loading 2s infinite;
+    -webkit-animation: loading 2s infinite;
+}
+
+.dot2{
+    animation: loading2 2s infinite;
+    -webkit-animation: loading2 2s infinite;
+}
+.dot3{
+    animation: loading2 2s infinite;
+    -webkit-animation: loading2 2s infinite;
+}
+@keyframes loading {
+    0% {
+    opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+    }
+@keyframes loading2 {
+    0% {
+    opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+    }
+@keyframes loading3 {
+    0% {
+    opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+    }
+

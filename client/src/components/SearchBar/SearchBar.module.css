@@ -16,9 +16,13 @@
 }
 
 .search{
+
     background-color: #FCF9BE;
     padding: 0.6rem 1rem 0.6rem 2rem;
     border: none;
+
+    box-shadow: 2px 2px 6px black;
+
     border-radius: 0.6rem;
     -webkit-border-radius: 0.6rem;
     -moz-border-radius: 0.6rem;
@@ -64,6 +68,9 @@
     width: fit-content;
     background-color: #FCF9BE;
     border: none;
+
+    box-shadow: 2px 2px 6px black;
+
     border-radius: 0.6rem;
     -webkit-border-radius: 0.6rem;
     -moz-border-radius: 0.6rem;

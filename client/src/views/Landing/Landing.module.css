@@ -41,3 +41,10 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
+
+.image{
+    position: absolute;
+    left: 55%;
+    width: 30%;
+    top:-5%;
+}

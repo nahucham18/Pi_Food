@@ -32,6 +32,19 @@ module.exports = (sequelize) => {
       type: DataTypes.ARRAY(DataTypes.TEXT),
       allowNull: false,
     },
+    // readyInMinutes,servings,pricePerServing
+    readyMinutes:{
+      type: DataTypes.INTEGER,
+      allowNull:true,
+    },
+    servings:{
+      type: DataTypes.INTEGER,
+      allowNull:true,
+    },
+    pricePerServing:{
+      type: DataTypes.DECIMAL,
+      allowNull:true,
+    },
     created:{
       type: DataTypes.BOOLEAN,
       defaultValue:true
