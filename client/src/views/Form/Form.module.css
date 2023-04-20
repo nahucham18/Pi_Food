@@ -193,9 +193,16 @@ hr{
 
 
 
+.noError{
+    margin: 0 0 0.8rem 0;
+    color: green;
+    opacity: 0;
+}
 .error{
     margin: 0 0 0.8rem 0;
+    color: red;
 }
+
 
 .btnCreate{
     background-color: #FAAB78;

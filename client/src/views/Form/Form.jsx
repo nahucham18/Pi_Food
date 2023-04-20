@@ -28,7 +28,6 @@ const Form = ({createComponent, create}) =>{
         image:'No hay error',
         summary:'No hay error',
         healthScore:'No hay error',
-        diets:[],
         readyInMinutes:'No hay error',
         servings:'No hay error',
         pricePerServing:'No hay error',
@@ -82,6 +81,10 @@ const Form = ({createComponent, create}) =>{
 
     
     const handleSumbit = (event) =>{
+
+        const hasErrors = Object.values(errors).every(error => error === "No hay error")
+
+        if (hasErrors) {
         const post = {
                 title:recipeData.name,
                 image:recipeData.image,
@@ -105,8 +108,14 @@ const Form = ({createComponent, create}) =>{
         window.alert('TODO OK')
         window.alert(post)
         console.log(post);
-        event.preventDefault()
+        
+        }else{
+            window.alert('No se puede')
+            event.preventDefault()
+        }
     }
+
+    
     
 
     
@@ -125,22 +134,22 @@ const Form = ({createComponent, create}) =>{
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Name: </h4></label>
                                 <input className={style.input} type="text" name="name" onChange={handleOnChage} />
-                                <h6 className={style.error}>{errors.name}</h6>
+                                <h6 className={errors.name === 'No hay error' ? style.noError : style.error}>{errors.name}</h6>
                             </div>
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>URL Image: </h4></label>
                                 <input className={style.input} type="text" name="image" onChange={handleOnChage}/>
-                            <h6 className={style.error}>{errors.image}</h6>
+                            <h6 className={errors.image === 'No hay error' ? style.noError : style.error}>{errors.image}</h6>
                             </div>
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Health Score: </h4> </label>
                                 <input className={style.inputHealth} type="text" name="healthScore" onChange={handleOnChage}/>
-                                <h6 className={style.error}>{errors.healthScore}</h6>
+                                <h6 className={errors.healthScore === "No hay error" ? style.noError : style.error}>{errors.healthScore}</h6>
                             </div>
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Summary: </h4></label>
                                 <textarea className={style.input} type="text" name="summary" onChange={handleOnChage} />
-                                <h6 className={style.error}>{errors.summary}</h6>
+                                <h6 className={errors.summary === 'No hay error' ? style.noError : style.error}>{errors.summary}</h6>
                             </div>
                         </div>
                     </div>
@@ -159,17 +168,17 @@ const Form = ({createComponent, create}) =>{
                     <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Time in Minutes:</h4></label>
                                 <input className={style.input} type="text"      name="readyInMinutes" onChange={handleOnChage} />
-                                <h6 className={style.error}>{errors.readyInMinutes}</h6>
+                                <h6 className={errors.readyInMinutes === 'No hay error' ? style.noError : style.error}>{errors.readyInMinutes}</h6>
                             </div>
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Servings:</h4></label>
                                 <input className={style.input} type="text" name="servings" onChange={handleOnChage}/>
-                            <h6 className={style.error}>{errors.servings}</h6>
+                            <h6 className={errors.servings === 'No hay error' ? style.noError : style.error}>{errors.servings}</h6>
                             </div>
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Price per serving:</h4> </label>
                                 <input className={style.input} type="text" name="pricePerServing" onChange={handleOnChage}/>
-                                <h6 className={style.error}>{errors.pricePerServing}</h6>
+                                <h6 className={errors.pricePerServing === 'No hay error' ? style.noError : style.error}>{errors.pricePerServing}</h6>
                             </div>
 
                     </div>
