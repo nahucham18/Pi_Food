@@ -82,9 +82,9 @@ const getRecipeById = async(id, source) =>{
                 summary: recipe.summary,
                 diets:recipe?.Diets?.map(diet=> diet.name),
                 healthScore: recipe.healthScore,
-                // pricePerServing: recipe.pricePerServing,
-                // servings: recipe.servings,
-                // readyInMinutes: recipe.readyInMinutes,
+                pricePerServing: recipe.pricePerServing,
+                servings: recipe.servings,
+                readyInMinutes: recipe.readyInMinutes,
                 created: recipe.created,
                 steps:recipe?.steps?.map((e,index) => {
                     return {

@@ -10,18 +10,23 @@ import Pagination from "../../components/Pagination/Pagination";
 import Form from '../Form/Form'
 import FilterBar from "../../components/FilterBar/FilterBar";
 import Loading from '../../components/Loading/Loading';
+import { resetPageAction } from '../../redux/actions';
 
 
 
 const Home = () =>{
     const dispatch = useDispatch();
-
-    const [create ,setCreate] = useState(false);
-    const [page, setPage] = useState(1);
+    
     const {recipes} = useSelector(state=>state)
     const {diets} = useSelector(state=>state)
     const {recipesFilter} = useSelector(state=>state)
+    const {resetPage} = useSelector(state =>state)
+
+    const [create ,setCreate] = useState(false);
+    const [page, setPage] = useState(1);
     const [active, setActive] = useState(page)
+
+    
     
     const paginate = (array,pagesSize)=>{
         return array.reduce((acc,val,index)=>{
@@ -36,25 +41,25 @@ const Home = () =>{
 
     
     const handlePageChange = (page) =>{
-        setPage(page);
-        setActive(page)
-        console.log(active);
+                setPage(page);
+                setActive(page)
     }
 
     const createComponent = () =>{
-        console.log('me clickeo');
         create ? setCreate(false) : setCreate(true)
     }
     
     useEffect(()=>{
+        if(resetPage){
+            handlePageChange(1);
+            dispatch(resetPageAction(false))
+        }
         recipes.length===0 && dispatch(getRecipes());
         diets.length === 0 && dispatch(getDiets());
         dispatch(getPages(arrayPages))
     },[recipes, recipesFilter,])
     
     
-    const handlerFiltrar = () =>{
-    }
     
     const arrayPages = paginate(recipesFilter, 9);
     return (
@@ -66,7 +71,7 @@ const Home = () =>{
             <div className={style.down}>
                 <FilterBar/>
                 <div className={style.principal}>
-                    <SearchBar createComponent={createComponent} filtrar={handlerFiltrar}/>
+                    <SearchBar createComponent={createComponent}/>
                     <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active} page={page}/>
                     {
                         recipes.length !== 0 ? <RecipesContainer page={page} recipesFilter={recipesFilter}/> 

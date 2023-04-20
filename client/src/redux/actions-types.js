@@ -9,3 +9,4 @@ export const FILTER_HEALTH = "FILTER_HEALTH";
 export const FILTER_DIETS = "FILTER_DIETS";
 export const FILTER_CREATE = "FILTER_CREATE";
 export const SEARCH_RECIPE = "SEARCH_RECIPE";
+export const RESET_PAGE = "RESET_PAGE";

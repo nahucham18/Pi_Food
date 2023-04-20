@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import style from './DietFilter.module.css'
-import { filterDiets } from '../../redux/actions';
+import { filterDiets, resetPageAction } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 const DietFilter = ({handleOnChange, create}) =>{
@@ -9,6 +9,7 @@ const DietFilter = ({handleOnChange, create}) =>{
 
     const {diets} = useSelector(state=>state)
     const dispatch = useDispatch()
+
     const handleDietChange = (event) =>{
         const { value, checked} = event.target;
         if(checked){
@@ -18,6 +19,11 @@ const DietFilter = ({handleOnChange, create}) =>{
         }
         
     }
+
+    const handleResetPage = () =>{
+        dispatch(resetPageAction(true))
+    }
+
     useEffect(()=>{
         if(create){
             handleOnChange(selected)
@@ -39,7 +45,9 @@ const DietFilter = ({handleOnChange, create}) =>{
                             <input type="checkbox" 
                                     value={diet.name}
                                     checked={selected.includes(diet.name)}
-                                    onChange={handleDietChange}/>
+                                    onChange={handleDietChange}
+                                    onClick={handleResetPage}
+                                    />
                                     {diet.name}
                         </label>
                         )

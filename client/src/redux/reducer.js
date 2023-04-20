@@ -1,4 +1,4 @@
-import { GET_RECIPES,GET_RECIPE_ID, ORDER, GET_PAGE, GET_DIETS, FILTER_HEALTH, SEARCH_RECIPE, FILTER_DIETS, FILTER_CREATE} from "./actions-types";
+import { GET_RECIPES,GET_RECIPE_ID, ORDER, GET_PAGE, GET_DIETS, FILTER_HEALTH, SEARCH_RECIPE, FILTER_DIETS, FILTER_CREATE, RESET_PAGE} from "./actions-types";
 
 const initialState=({
                     recipes:[],
@@ -6,6 +6,7 @@ const initialState=({
                     recipeID:{},
                     pages:[],
                     diets:[],
+                    resetPage:false,
 })
 
 const reducer =(state = initialState,action)=>{
@@ -121,6 +122,12 @@ const reducer =(state = initialState,action)=>{
                 ...state,
                 recipesFilter:state.recipes,
             }
+        }
+
+        case RESET_PAGE:
+            return {
+            ...state,
+            resetPage:action.payload,
         }
 
         default: return {

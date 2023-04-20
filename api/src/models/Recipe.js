@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     // readyInMinutes,servings,pricePerServing
-    readyMinutes:{
+    readyInMinutes:{
       type: DataTypes.INTEGER,
       allowNull:true,
     },

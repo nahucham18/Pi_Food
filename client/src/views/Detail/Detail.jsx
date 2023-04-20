@@ -56,7 +56,7 @@ const Detail = () =>{
                         </div>
                         <div className={style.uni}>
                             <img className={style.iconDolar} src={dolar} alt="" />
-                            <span className={style.infoIcon}>{`${recipe.pricePerServing}`}</span>
+                            <span className={style.infoIcon}>{`${recipeID.pricePerServing}`}</span>
                         
                     </div>
                 </div>

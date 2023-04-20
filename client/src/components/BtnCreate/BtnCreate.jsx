@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import style from './BtnCreate.module.css'
-import { filterCreate } from '../../redux/actions'
+import { filterCreate, resetPageAction } from '../../redux/actions'
 
 const BtnCreate = () =>{
 
@@ -8,6 +8,7 @@ const BtnCreate = () =>{
 
     const handleCreate = (event) =>{
         dispatch(filterCreate(event.target.value))
+        dispatch(resetPageAction(true))
     }
     return (
         <div className={style.container}>

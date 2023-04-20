@@ -12,7 +12,7 @@ const FilterBar = () =>{
             
                 <div className={style.filterBar}>
                     <div className={style.order}>
-                        <OrderFilter/>
+                        <OrderFilter />
                     </div>
                     <div>
                         <DietFilter/>

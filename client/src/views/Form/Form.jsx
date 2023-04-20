@@ -88,7 +88,10 @@ const Form = ({createComponent, create}) =>{
                 summary:recipeData.summary,
                 healthScore:recipeData.healthScore,
                 steps:steps,
-                dietTypes:recipeData.diets
+                dietTypes:recipeData.diets,
+                readyInMinutes:recipeData.readyInMinutes,
+                servings:recipeData.servings,
+                pricePerServing:recipeData.pricePerServing,
         }
     
         axios
@@ -121,7 +124,7 @@ const Form = ({createComponent, create}) =>{
                         <div className={style.infoMain}>
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Name: </h4></label>
-                                <input className={style.input} type="text"      name="name" onChange={handleOnChage} />
+                                <input className={style.input} type="text" name="name" onChange={handleOnChage} />
                                 <h6 className={style.error}>{errors.name}</h6>
                             </div>
                             <div className={style.labelInfoMain}>
