@@ -16,6 +16,7 @@ const Detail = () =>{
 
     useEffect(()=>{
         dispatch(getRecipeID(id))
+
         // const fetchRecipe = async ()=>{
         //     try{
         //         const recipe = (await axios(`http://localhost:3001/recipes/${id}`)).data
@@ -38,7 +39,19 @@ const Detail = () =>{
                 <h1 className={style.title}>{recipeID.title}</h1>
                 <p className={style.summary}>{recipeID.summary?.replace(/<[^>]*>/g, "")}</p>
                 <div className={style.steps}>
-                    Steps:
+                    <h4>List steps:</h4>
+                    {
+                        recipeID?.steps?.map(step=>{
+                            return (
+                                    <div>
+                                        <span>{step.number}</span>
+                                        <span>{step.step}</span>
+                                    </div>
+                            ) 
+                            
+                        })
+        
+                    }
                 </div>
                 </div>
 

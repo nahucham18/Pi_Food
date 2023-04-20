@@ -3,11 +3,15 @@ import style from './Form.module.css'
 import validation from './validation'
 import axios from 'axios';
 import DietFilter from '../../components/DietFilter/DietFilter';
+import MessageForm from '../../components/MessageForm/MessageForm';
+import MessageError from '../../components/MessageError/MessageError';
 
 const Form = ({createComponent, create}) =>{
 
     const [steps, setStepts] = useState([])
     const [stepsInput, setSteptsInput] = useState("")
+    const [createRecipe, setCreateRecipe] = useState(false);
+    const [error, setError] = useState(false);
     
     const [recipeData, setRecipeData] = useState({
         name:'',
@@ -18,8 +22,6 @@ const Form = ({createComponent, create}) =>{
         readyInMinutes:0,
         servings:0,
         pricePerServing:0,
-
-
     })
 
 
@@ -39,7 +41,6 @@ const Form = ({createComponent, create}) =>{
             [event.target.name]: event.target.value
         })
 
-    
     
         setErrors(validation({
             ...recipeData,
@@ -78,6 +79,13 @@ const Form = ({createComponent, create}) =>{
         })
     }
 
+    const handleErrorMessage = () =>{
+        if(error){
+            setError(false)
+        }else{
+            setError(true);
+        }
+    }
 
     
     const handleSumbit = (event) =>{
@@ -105,23 +113,23 @@ const Form = ({createComponent, create}) =>{
             .catch((error)=>{
                 console.error("Error al crear receta:", error)
             })
-        window.alert('TODO OK')
-        window.alert(post)
-        console.log(post);
+
+        setCreateRecipe(true)
+        event.preventDefault()
         
         }else{
-            window.alert('No se puede')
+            handleErrorMessage()
             event.preventDefault()
         }
     }
 
-    
-    
-
-    
 
     return (
         <div className={style.container}>
+            {createRecipe ? <MessageForm createComponent={createComponent} createRecipe={createRecipe}/> : <></>}
+            {
+                error ? <MessageError handleErrorMessage={handleErrorMessage}/> : <></>
+            }
             <form className={style.form}action=""onSubmit={handleSumbit}>
             <button className={style.btnClose} onClick={()=>createComponent()}>x</button>
                 
@@ -167,17 +175,17 @@ const Form = ({createComponent, create}) =>{
                     <div className={style.leftDown}>
                     <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Time in Minutes:</h4></label>
-                                <input className={style.input} type="text"      name="readyInMinutes" onChange={handleOnChage} />
+                                <input className={style.inputSec} type="text"      name="readyInMinutes" onChange={handleOnChage} />
                                 <h6 className={errors.readyInMinutes === 'No hay error' ? style.noError : style.error}>{errors.readyInMinutes}</h6>
                             </div>
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Servings:</h4></label>
-                                <input className={style.input} type="text" name="servings" onChange={handleOnChage}/>
+                                <input className={style.inputSec} type="text" name="servings" onChange={handleOnChage}/>
                             <h6 className={errors.servings === 'No hay error' ? style.noError : style.error}>{errors.servings}</h6>
                             </div>
                             <div className={style.labelInfoMain}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Price per serving:</h4> </label>
-                                <input className={style.input} type="text" name="pricePerServing" onChange={handleOnChage}/>
+                                <input className={style.inputSec} type="text" name="pricePerServing" onChange={handleOnChage}/>
                                 <h6 className={errors.pricePerServing === 'No hay error' ? style.noError : style.error}>{errors.pricePerServing}</h6>
                             </div>
 

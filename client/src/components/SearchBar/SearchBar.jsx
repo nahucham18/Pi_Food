@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import style from './SearchBar.module.css'
-import { searchRecipe} from '../../redux/actions'
+import { resetPageAction, searchRecipe} from '../../redux/actions'
 import iconSearch from '../../assets/search-regular-24.png'
 
 
@@ -8,6 +8,7 @@ const SearchBar = ({createComponent}) =>{
     const dispatch = useDispatch()
 
     const handlerInput = (event) =>{
+        dispatch(resetPageAction(true))
         const value = event.target.value
         const newValue = value.toLowerCase();
         dispatch(searchRecipe(newValue));

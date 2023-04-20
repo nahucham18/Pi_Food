@@ -1,0 +1,52 @@
+.message{
+    box-sizing: border-box;
+    padding: 2rem;
+    position: absolute;
+    background-color: #fff;
+    width: 40%;
+    height: 60%;
+    top:70%;
+    left: 50%;
+    margin-top: -30%;
+    margin-left: -20%;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid black;
+
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+.check{
+    width: 30%;
+}
+.messageCreated{
+    margin: 0;
+}
+
+.congrats{
+    margin: 0;
+    margin-bottom: 3rem;
+    opacity: 0.5;
+}
+
+.btn{
+    background-color: #57aa4c;
+    color: #ddd;
+    border: none;
+    font-size: 1.6rem;
+    padding:0.6rem 4rem;
+
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem;
+    -ms-border-radius: 0.6rem;
+    -o-border-radius: 0.6rem;
+}
