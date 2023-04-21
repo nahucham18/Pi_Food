@@ -30,7 +30,9 @@ const NavBar = () =>{
                         <Link className={style.link} to="/about">About</Link>
                     </div>
                     <div className={style.about}>
-                        conocenos
+                        <Link className={style.linkAbout} to={'/about'}>
+                            conocenos
+                        </Link>
                     </div>
                 </div>
             </nav>

@@ -16,7 +16,6 @@ const BtnCreate = () =>{
             <div className={style.btns}>
                     <button className={style.btnCreate} onClick={handleCreate} value="api">Api</button>
                     <button className={style.btnCreate} onClick={handleCreate} value="bdd">BDD</button>
-
                     <button className={style.btnReset} onClick={handleCreate} value="all">RESET ALL</button>
             </div>
         </div>

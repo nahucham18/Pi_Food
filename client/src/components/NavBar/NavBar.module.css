@@ -82,7 +82,7 @@
 }
 
 .about{
-    color: #fff;
+    
     background-color: rgba(1, 1, 1, 0.9);
     padding:0.8rem 1rem;
     border-radius: 1rem;
@@ -90,6 +90,11 @@
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+}
+
+.linkAbout{
+    color: #fff;
+    text-decoration: none;
 }
 
 .about:hover{

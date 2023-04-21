@@ -1,0 +1,47 @@
+.containerAbout{
+    padding: 7rem 2rem 4rem;
+}
+.aboutMe{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.left{
+    width: 50%;
+}
+
+.img{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.app{
+
+}
+
+.infoApp{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.techs{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.tech{
+    box-sizing: border-box;
+    width: 50%;
+    border: 1px solid black;
+    height: 300px;
+
+}

@@ -1,7 +1,12 @@
 .loading{
     background-color: rgba(1, 1, 1, 0.6);
-    width: 100%;
+    width: 90%;
     position: relative;
+    margin: 0 auto;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
 }
 
 .image{
@@ -9,7 +14,6 @@
 }
 
 .loadingGif {
-    position: absolute;
     bottom: 4%;
     right: 35%;
     display: flex;
@@ -20,18 +24,25 @@
     
     }
 
+.titleLoading{
+    color: #241905;
+}
+
     .dot1 {
-    animation: loading 2s infinite;
-    -webkit-animation: loading 2s infinite;
+        color: #241905;
+    animation: loading 1s infinite;
+    -webkit-animation: loading 1s infinite;
 }
 
 .dot2{
-    animation: loading2 2s infinite;
-    -webkit-animation: loading2 2s infinite;
+    color: #241905;
+    animation: loading2 1s infinite;
+    -webkit-animation: loading2 1s infinite;
 }
 .dot3{
-    animation: loading2 2s infinite;
-    -webkit-animation: loading2 2s infinite;
+    color: #241905;
+    animation: loading3 1s infinite;
+    -webkit-animation: loading3 1s infinite;
 }
 @keyframes loading {
     0% {
@@ -39,6 +50,9 @@
     }
     20% {
         opacity: 1;
+    }
+    60%{
+        opacity: 0.2;
     }
     100% {
         opacity: 0.2;
@@ -48,10 +62,13 @@
     0% {
     opacity: 0.2;
     }
-    20% {
+    40% {
         opacity: 1;
     }
-    100% {
+    80% {
+        opacity: 0.2;
+    }
+    100%{
         opacity: 0.2;
     }
     }
@@ -59,7 +76,7 @@
     0% {
     opacity: 0.2;
     }
-    20% {
+    60% {
         opacity: 1;
     }
     100% {
