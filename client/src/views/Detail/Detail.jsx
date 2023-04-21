@@ -30,7 +30,6 @@ const Detail = () =>{
         return function clean(){
         };
     },[id])
-    console.log(recipe);
     return (
         <div className={style.container}>
             <div className={style.detail}>
@@ -39,13 +38,13 @@ const Detail = () =>{
                 <h1 className={style.title}>{recipeID.title}</h1>
                 <p className={style.summary}>{recipeID.summary?.replace(/<[^>]*>/g, "")}</p>
                 <div className={style.steps}>
-                    <h4>List steps:</h4>
+                    <h4 className={style.listSteps}>List steps:</h4>
                     {
-                        recipeID?.steps?.map(step=>{
+                        recipeID?.steps?.map((step, index)=>{
                             return (
-                                    <div>
-                                        <span>{step.number}</span>
-                                        <span>{step.step}</span>
+                                    <div key={index + 1} className={style.stepUni}>
+                                        <span className={style.stepNumber}>{step.number}</span>
+                                        <span className={style.step}>{step.step}</span>
                                     </div>
                             ) 
                             

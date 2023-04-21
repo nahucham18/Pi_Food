@@ -1,6 +1,6 @@
 .container{
     box-sizing: border-box;
-    height: 100vh;
+    
     
     padding: 8rem 0 2rem 0;
 }
@@ -36,9 +36,37 @@
     color: #ddd;
 }
 
+.stepUni{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
 .steps{
-    border: 1px solid black;
-    height: 200px;
+    box-sizing: border-box;
+    border: 1px solid #FCF9BE;
+    
+    text-align: start;
+    padding:1rem 3rem 2rem;
+
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+.listSteps{
+    text-align:  center;
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+    color: #FCF9BE;
+}
+
+.stepNumber{
+    margin-right: 0.6rem;
+    color: #FCF9BE;
+}
+.step{
+    color: #ddd;
 }
 
 

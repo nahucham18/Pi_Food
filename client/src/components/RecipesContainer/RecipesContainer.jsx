@@ -85,7 +85,8 @@ const RecipesContainer = ({page, recipesFilter}) =>{
 
     const {pages} = useSelector(state=>state)
 
-    const AllRecipes = pages[page-1];
+    const AllRecipes = pages[page-1]
+    console.log(AllRecipes);;
     return (
         <div className={style.container}>
             <div className={style.recipes_container}>
@@ -99,7 +100,6 @@ const RecipesContainer = ({page, recipesFilter}) =>{
                                 healthScore={recipe.healthScore}
                                 diets={recipe.diets}
                                 created={recipe.created}
-                                Diets={recipe.Diets}
                                 
                         />
                     })

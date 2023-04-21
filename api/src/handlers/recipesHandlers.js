@@ -1,8 +1,6 @@
 const {createRecipe ,getRecipeById , getAllRecipes, searchRecipeByName} = require('../controllers/recipes.controller')
 
 
-
-
 const getRecipesHandler = async(req,res) =>{
     const { name } = req.query;
     try {
@@ -28,7 +26,6 @@ const getRecipesByIdHandler = async(req,res)=>{
 
 const postRecipesHandler= async(req,res)=>{
     const {title,image,summary,healthScore,steps,readyInMinutes,servings,pricePerServing, dietTypes} = req.body;
-    console.log({title,image,summary,healthScore,steps,dietTypes});
     try {
         const newRecipe = await createRecipe(title,image,summary,healthScore,steps,readyInMinutes,servings,pricePerServing,dietTypes);
         res.status(200).json(newRecipe)

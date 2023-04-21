@@ -6,7 +6,7 @@ import style from './Recipe.module.css';
                                 // image={recipe.image}
                                 // healthScore={recipe.healthScore}
                                 // diets={recipe.diets}
-const Recipe = ({key,id,title,image,healthScore,diets,Diets,created}) =>{
+const Recipe = ({id,title,image,healthScore,diets,created}) =>{
     return (
         <div className={style.divRecipe}>
             <div className={style.recipe}>
@@ -21,13 +21,9 @@ const Recipe = ({key,id,title,image,healthScore,diets,Diets,created}) =>{
                 <div className={style.recipeDown}>
 
                     {
-                        created ?
-                        Diets?.map(diet=>{
-                            return <span className={style.diet}>{`${diet.name}`}</span>
-                        })
-                        :
-                        diets?.map(diet=> {
-                            return <span className={style.diet}>{diet}</span>
+                    
+                        diets?.map((diet,index)=> {
+                            return <span key={index + 1} className={style.diet}>{diet}</span>
                         })
                     }
                 </div>

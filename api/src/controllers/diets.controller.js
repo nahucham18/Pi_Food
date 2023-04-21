@@ -32,7 +32,7 @@ module.exports = {
         })
         console.log('me ha ejecutado' + 1);
         } else{
-            console.log(data);
+            // console.log(data);
             console.log('los datos de dietas ya estan cargados')
         }
         

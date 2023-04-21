@@ -2,6 +2,31 @@ const { Recipe, Diet } = require ('../db');
 const axios = require('axios')
 const {API_KEY} = process.env
 
+const cleanArrayBdd=(arrayBdd)=>
+        arrayBdd.map(recipe=>{
+        return {
+            id:recipe.id,
+            title: recipe.title,
+            image: recipe.image,
+            summary: recipe.summary,
+            healthScore: recipe.healthScore,
+            pricePerServing: recipe.pricePerServing,
+            servings: recipe.servings,
+            readyInMinutes: recipe.readyInMinutes,
+            created: recipe.created,
+            steps:recipe?.steps?.map((e,index) => {
+                return {
+                    number: index + 1,
+                    step: e,
+                    // ingredients: e.ingredients,
+                };
+                }),
+            diets: recipe.Diets.map((diet)=> diet.name)
+            
+        }
+    })
+
+
 const cleanArray = (array) =>
         array.map(elem=>{
         return {
@@ -101,7 +126,6 @@ const getRecipeById = async(id, source) =>{
 
     return recipe;
 }
-
 const getAllRecipes = async() =>{
     const databaseRecipes = await Recipe.findAll({
         include: {
@@ -120,7 +144,8 @@ const getAllRecipes = async() =>{
         ).data
 
     const apiRecipes = cleanArray(apiRecipesRaw.results);
-    return [...databaseRecipes, ...apiRecipes]
+    const newDatabaseRecipes = cleanArrayBdd(databaseRecipes)
+    return [...newDatabaseRecipes, ...apiRecipes]
 }
 
 const searchRecipeByName = async(name) =>{
