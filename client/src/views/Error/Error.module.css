@@ -1,0 +1,15 @@
+.errorDiv{
+    background-image: url("https://www.thespruce.com/thmb/zmWyqdsTawuabC8LlEJ1iKYGCrM=/2048x0/filters:no_upscale():max_bytes(150000):strip_icc()/modern-white-kitchens-4164395-hero-67d3da603c9146ef91bc24623442df85.jpg");
+
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.messageError{
+    width: 50%;
+    height: 300px;
+    background-color: red;
+    margin-top: 1rem;
+}

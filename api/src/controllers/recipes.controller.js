@@ -27,25 +27,32 @@ const cleanArrayBdd=(arrayBdd)=>
     })
 
 
-const cleanArray = (array) =>
-        array.map(elem=>{
-        return {
-            id:elem.id,
-            title:elem.title,
-            summary:elem.summary,
-            healthScore:elem.healthScore,
-            diets: elem.diets,
-            image:elem.image,
-            created:false,
-            steps:elem.analyzedInstructions[0]?.steps.map((e) => {
-                return {
-                    number: e.number,
-                    step: e.step,
-                    ingredients: e.ingredients,
-                };
-                }),
-        }
-    });
+const cleanArray = (array) =>{
+            array.forEach(element => {
+                if(element.vegetarian === true){
+                    element.diets = [...element.diets,"vegetarian"]
+                }
+            })
+            const newArray = array.map(elem=>{
+            return {
+                id:elem.id,
+                title:elem.title,
+                summary:elem.summary,
+                healthScore:elem.healthScore,
+                diets: elem.diets,
+                image:elem.image,
+                created:false,
+                steps:elem.analyzedInstructions[0]?.steps.map((e) => {
+                    return {
+                        number: e.number,
+                        step: e.step,
+                        ingredients: e.ingredients,
+                    };
+                    }),
+            }
+        });
+        return newArray;
+}
 
 
 const createRecipe = async(title,image,summary,healthScore,steps,readyInMinutes,servings,pricePerServing, dietTypes)=>{
