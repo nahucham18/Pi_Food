@@ -122,6 +122,10 @@
     width: 90%;
 }
 
+.icon{
+    width: 95%;
+}
+
 
 
 
@@ -132,8 +136,17 @@
     font-size: 1.2rem;
 }
 
-.ingredientes{
-    border: 1px solid black;
-    height: 150px;
+.ingredients{
+    color: #ddd;
+    margin-top: 1rem;
+    box-sizing: border-box;
     width: 100%;
+    text-align: start;
+    padding: 2rem;
+    border: 1px solid #F4EEB1;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }

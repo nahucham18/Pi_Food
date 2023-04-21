@@ -6,10 +6,10 @@ const Error = () =>{
     return <div>
         <div className={style.errorDiv}>
             <div className={style.messageError}>
-                <h1>404</h1>
-                <h2>Not Found</h2>
-                <p>Sorry, the page you'r searching for doesn´t exist.</p>
-                <Link to={"/home"}>HOME</Link>
+                <h1 className={style.error}>404</h1>
+                <h2 className={style.not}>Not Found</h2>
+                <p className={style.text_p}>Sorry, the page you'r searching for doesn´t exist.</p>
+                <Link className={style.btn} to={"/home"}>Home page</Link>
             </div>
         </div>
     </div>
