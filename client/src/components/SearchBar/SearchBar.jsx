@@ -22,7 +22,7 @@ const SearchBar = ({createComponent}) =>{
                     <img className={style.iconSearch} src={iconSearch} alt="icon-search" />
                 </div>
 
-                <button className={style.btnCreate} onClick={()=>createComponent()}>Craete Recipe</button>
+                <button className={style.btnCreate} onClick={()=>createComponent()}>Create Recipe</button>
             </div>
             
         </div>

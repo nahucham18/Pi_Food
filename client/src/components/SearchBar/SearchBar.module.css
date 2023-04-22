@@ -16,8 +16,7 @@
 }
 
 .search{
-
-    background-color: #FCF9BE;
+    background-color: #ccc998;
     padding: 0.6rem 1rem 0.6rem 2rem;
     border: none;
 
@@ -28,6 +27,11 @@
     -moz-border-radius: 0.6rem;
     -ms-border-radius: 0.6rem;
     -o-border-radius: 0.6rem;
+}
+
+.search:focus{
+    background-color: #FCF9BE;
+    
 }
 
 .iconSearch{
@@ -64,9 +68,11 @@
 }
 
 .btnCreate{
+    cursor: pointer;
     padding:0.6rem 1rem;
     width: fit-content;
     background-color: #FCF9BE;
+    font-weight: 900;
     border: none;
 
     box-shadow: 2px 2px 6px black;
@@ -76,4 +82,9 @@
     -moz-border-radius: 0.6rem;
     -ms-border-radius: 0.6rem;
     -o-border-radius: 0.6rem;
+}
+
+.btnCreate:active{
+    
+    box-shadow:2px 2px 4px black;
 }

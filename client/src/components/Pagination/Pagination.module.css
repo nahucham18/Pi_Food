@@ -4,8 +4,31 @@
     margin: 1rem auto;
 }
 .page{
-    background-color: #FCF9BE;
+    cursor: pointer;
+    background-color: #ccc998;
+    font-weight: 900;
     border: 1px solid black;
+    border: none;
+    width: 25px;
+    margin:0 0.2rem;
+    padding: 0.4rem 0;
+    box-shadow: 2px 2px 5px black;
+    
+
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+}
+.page:active{
+    box-shadow: 2px 2px 3px black;
+}
+
+.pageArrow{
+    cursor: pointer;
+    background-color: #FCF9BE;
+    font-weight: 900;
     border: none;
     width: 25px;
     margin:0 0.2rem;
@@ -20,8 +43,14 @@
     -o-border-radius: 0.2rem;
 }
 
+.pageArrow:active{
+    box-shadow: 2px 2px 3px black;
+}
+
 .pageActive{
-    background-color: #fdf66b;
+    cursor: pointer;
+    background-color: #FCF9BE;
+    font-weight: 900;
     border: none;
     width: 25px;
     margin:0 0.2rem;
@@ -34,4 +63,9 @@
     -moz-border-radius: 0.2rem;
     -ms-border-radius: 0.2rem;
     -o-border-radius: 0.2rem;
+}
+
+.pageActive:active{
+    box-shadow: 2px 2px 3px black;
+    
 }

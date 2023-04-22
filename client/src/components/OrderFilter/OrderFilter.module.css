@@ -6,6 +6,7 @@
 }
 
 .opc{
+    cursor: pointer;
     font-weight: 900;
     margin: 0.2rem;
     border: none;
@@ -17,6 +18,10 @@
     -moz-border-radius: 0.4rem;
     -ms-border-radius: 0.4rem;
     -o-border-radius: 0.4rem;
+}
+
+.opc::before{
+    background-color: red;
 }
 
 .order{
