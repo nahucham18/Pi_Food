@@ -6,10 +6,11 @@
 .page{
     cursor: pointer;
     background-color: #ccc998;
-    font-weight: 900;
+    font-weight:0;
+    font-size: 0.7rem;
     border: 1px solid black;
     border: none;
-    width: 25px;
+    width: 20px;
     margin:0 0.2rem;
     padding: 0.4rem 0;
     box-shadow: 2px 2px 5px black;
@@ -28,9 +29,10 @@
 .pageArrow{
     cursor: pointer;
     background-color: #FCF9BE;
-    font-weight: 900;
+    font-weight:0;
+    font-size: 0.7rem;
     border: none;
-    width: 25px;
+    width: 20px;
     margin:0 0.2rem;
     padding: 0.4rem 0;
 
@@ -50,9 +52,10 @@
 .pageActive{
     cursor: pointer;
     background-color: #FCF9BE;
-    font-weight: 900;
+    font-weight:0;
+    font-size: 0.7rem;
     border: none;
-    width: 25px;
+    width: 20px;
     margin:0 0.2rem;
     padding: 0.4rem 0;
 
@@ -68,4 +71,23 @@
 .pageActive:active{
     box-shadow: 2px 2px 3px black;
     
+}
+
+@media (min-width:576px){
+    .page{
+        width: 25px;
+        font-weight: 900;
+        font-size: 0.9rem;
+    }
+    .pageArrow{
+        width: 25px;
+        font-weight: 900;
+        font-size: 0.9rem;
+    }
+
+    .pageActive{
+        width: 25;
+        font-weight: 900;
+        font-size: 0.9rem;
+    }
 }

@@ -7,9 +7,11 @@
     background-image: url("https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
     background-image: url("https://media.istockphoto.com/id/586070810/es/foto/fondo-de-textura-de-panel-de-madera-blanca.jpg?s=612x612&w=0&k=20&c=yjKUkDk1Nc31XfmGvTr6ExjiXbzxiTeZFnpVwyXQUqU=");
     
-
+    flex-direction: column;
     min-height: 800px;
     padding-bottom: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .text_p{
@@ -32,4 +34,10 @@
 .negrita{
     color:goldenrod;
     font-weight: 900;
+}
+
+@media(min-width:768px){
+    .down{
+        flex-direction: row;
+    }
 }

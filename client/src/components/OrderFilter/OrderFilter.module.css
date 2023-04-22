@@ -31,3 +31,9 @@
     margin: 0 0 0.2rem 0;
     text-align: start;
 }
+
+@media (min-width:768px){
+    .orderFilter{
+        flex-direction: column;
+    }
+}

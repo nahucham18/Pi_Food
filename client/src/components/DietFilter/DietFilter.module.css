@@ -1,6 +1,8 @@
 .filterDiets{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:0rem 1rem;
     text-align: start;
     background-color: #FCF9BE;
     width: fit-content;
@@ -19,4 +21,12 @@
     text-align: start;
     color: #FCF9BE;
 
+}
+
+@media(min-width:768px){
+    .filterDiets{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap:0;
+    }
 }

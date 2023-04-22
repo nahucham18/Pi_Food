@@ -11,6 +11,7 @@ import Form from '../Form/Form'
 import FilterBar from "../../components/FilterBar/FilterBar";
 import Loading from '../../components/Loading/Loading';
 import { resetPageAction } from '../../redux/actions';
+import FilterBarHor from '../../components/FilterBarHor/FilterBarHor';
 
 
 
@@ -71,6 +72,7 @@ const Home = () =>{
             <p className={style.text_p}>En Henry Foods encontraras mas de 100 recetas para poder expandir mas tu conocimientos culinarios. <br />Sumate a nosotros, forma parte de esta comundad gastronomica y demostra que tus platos tambien son unicos. <span className={style.negrita}>A cocinar!</span> </p>
             <div className={style.down}>
                 <FilterBar/>
+                <FilterBarHor/>
                 <div className={style.principal}>
                     <SearchBar createComponent={createComponent}/>
                     <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active} page={page}/>

@@ -1,0 +1,21 @@
+.containerFilter{
+    width: 100%;
+    
+}
+
+.filterBar{
+    background-color: rgba(1, 1, 1, 0.8);
+    width: fit-content;
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem ;
+}
+
+@media(min-width:768px){
+    .containerFilter{
+        display: none;
+    }
+}

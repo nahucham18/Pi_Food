@@ -1,6 +1,6 @@
 .divRecipe{
-    width: 30%;
-    min-width: 200px;
+    width: 70%;
+    
 }
 
 .link{
@@ -126,4 +126,23 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+}
+
+@media(min-width:576px){
+    .divRecipe{
+        width: 45%;
+        max-width: 300px;
+    }
+}
+@media(min-width:768px){
+    .divRecipe{
+        width: 45%;
+        max-width: 250px;
+    }
+}
+@media(min-width:992px){
+    .divRecipe{
+        width: 30%;
+        max-width: 250px;
+    }
 }

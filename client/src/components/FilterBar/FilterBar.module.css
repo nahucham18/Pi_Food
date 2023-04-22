@@ -1,12 +1,12 @@
 .containerFilter{
     width: 30%;
-    
+    display: none;
 }
 
 .filterBar{
     background-color: rgba(1, 1, 1, 0.8);
     width: fit-content;
-    min-width: 280px;
+    min-width: 200px;
     margin-top: 2rem;
     margin-left: 1rem;
     display: flex;
@@ -15,5 +15,12 @@
     gap: 0.6rem;
     padding: 1rem 0;
 }
+
+@media (min-width:768px){
+    .containerFilter{
+        display: block;
+    }
+}
+
 
 
