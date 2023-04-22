@@ -17,9 +17,7 @@
     box-sizing: border-box;
     width: 50%;
     margin:1rem 0 0 0;
-    text-align: start;
-
-    
+    text-align: start;    
 }
 
 
@@ -79,3 +77,4 @@
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
 }
+

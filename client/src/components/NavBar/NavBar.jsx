@@ -17,6 +17,7 @@ const NavBar = () =>{
 
     window.addEventListener('scroll',navOnChange)
 
+
     return (
         <div >
             <nav className={navFixed ? style.containerFixed : style.container}>
@@ -31,16 +32,21 @@ const NavBar = () =>{
                             }
                         </div>
                     </Link>
+
                     <div className={style.menu}>
                         <Link className={style.link} to="/home">Home</Link>
                         <Link className={style.link} to={'/'}>Diets</Link>
                         <Link className={style.link} to="/about">About</Link>
                     </div>
+
                     <div className={style.about}>
                         <Link className={style.linkAbout} to={'/about'}>
                             conocenos
                         </Link>
                     </div>
+                    <Link>
+                        <div className={style.menuHamb}></div>
+                    </Link>
                 </div>
             </nav>
         </div>
