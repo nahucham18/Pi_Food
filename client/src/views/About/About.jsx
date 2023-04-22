@@ -27,7 +27,7 @@ const About = () =>{
                     <div className={style.infoApp}>
                         <div className={style.leftInfoApp}>
                             <h4 className={style.titleInfo}>Info de la app</h4>
-                            <p className={style.textInfo}>Chef at home es la plataforma en línea donde puedes explorar una amplia variedad de recetas que puedes usar al momento de cocinar. En nuestra plataforma, podrás ver comidas de diferentes tipos de dietas,ver el paso a paso que conlleva cada preparación, incluso crear tus propias recetas personales. En Chef at home, estamos comprometidos en brindarte todo el conocimiento para que lo lleves a tu mesa. ¡Únete a nuestra comunidad y demostra lo que puedes preparar!</p>
+                            <p className={style.textInfo}>Henry Foods es la plataforma en línea donde puedes explorar una amplia variedad de recetas que puedes usar al momento de cocinar. En nuestra plataforma, podrás ver comidas de diferentes tipos de dietas,ver el paso a paso que conlleva cada preparación, incluso crear tus propias recetas personales. En Chef at home, estamos comprometidos en brindarte todo el conocimiento para que lo lleves a tu mesa. ¡Únete a nuestra comunidad y demostra lo que puedes preparar!</p>
                         </div>
                     <img className={style.imageLogo} src={logo} alt="logo" />
                     </div>

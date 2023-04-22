@@ -13,7 +13,7 @@
     -moz-transition: .3s;
     -ms-transition: .3s;
     -o-transition: .3s;
-    z-index: 4;
+    z-index: 2;
 }
 
 .containerFixed{

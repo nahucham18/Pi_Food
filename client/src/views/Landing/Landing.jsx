@@ -7,8 +7,10 @@ const Landing = () =>{
         <div className={style.container}>
             <div className={style.landing}>
                 <div className={style.intro}>
-                    <h3 className={style.text_h}>Date el gusto de cocinar,</h3>
-                    <p className={style.text_p}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aspernatur quam recusandae culpa a deleniti eos sit maxime quod tempore vero asperiores accusantium, omnis voluptatem accusamus. Repellendus aliquam necessitatibus ad!</p>
+                    <div className={style.card}>
+                        <h3 className={style.text_h}>Date el gusto de cocinar,</h3>
+                        <p className={style.text_p}>Explorá mas de 100 recetas, aprende el paso a paso de diversos platillos, crea los platos que mas te gusten, llena de sabor tu cocina!</p>
+                    </div>
                     <Link className={style.btn_home}to={`/home`}>Home page</Link>
                 </div>
                 <img className={style.image} src={logo} alt="" />

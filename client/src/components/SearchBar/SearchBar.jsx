@@ -18,7 +18,7 @@ const SearchBar = ({createComponent}) =>{
         <div className={style.container}>
             <div className={style.divSearchBar}>
                 <div className={style.containerSearch}>
-                    <input className={style.search} type="text" onChange={handlerInput}/>
+                    <input className={style.search} type="text" onChange={handlerInput} placeholder='search recipe'/>
                     <img className={style.iconSearch} src={iconSearch} alt="icon-search" />
                 </div>
 

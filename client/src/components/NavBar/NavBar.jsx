@@ -27,7 +27,7 @@ const NavBar = () =>{
                             <img className={navFixed ?style.logoFixed : style.logo} src={logo} alt="" />
                             {
                                 navFixed ? 
-                                <h5 className={style.logoLink}>Cheff at home</h5>:<></>
+                                <h5 className={style.logoLink}>Henry Foods</h5>:<></>
                             }
                         </div>
                     </Link>
