@@ -22,8 +22,15 @@ const NavBar = () =>{
             <nav className={navFixed ? style.containerFixed : style.container}>
                 
                 <div className={style.nav}>
-                        <img className={navFixed ?style.logoFixed : style.logo} src={logo} alt="" />
-                        
+                    <Link to={'/home'} className={style.logoIn}>
+                        <div className={style.containerLogo}>
+                            <img className={navFixed ?style.logoFixed : style.logo} src={logo} alt="" />
+                            {
+                                navFixed ? 
+                                <h5 className={style.logoLink}>Cheff at home</h5>:<></>
+                            }
+                        </div>
+                    </Link>
                     <div className={style.menu}>
                         <Link className={style.link} to="/home">Home</Link>
                         <Link className={style.link} to={'/'}>Diets</Link>

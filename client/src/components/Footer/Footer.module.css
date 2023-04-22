@@ -1,0 +1,79 @@
+.footer{
+    box-sizing: border-box;
+    padding: 2rem 0;
+    background-color: #111;
+    
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    justify-content: space-evenly;
+}
+
+
+
+.titleAbout{
+    text-align: start;
+}
+
+.divAbout{
+    width: 20%;
+    
+}
+
+.about{
+    text-align: start;
+    font-size: 0.8rem;
+}
+
+.contact{
+    
+    width: 16%;
+}
+.titleContact{
+    text-align: start;
+}
+
+.ul{
+    text-align: start;
+    list-style: none;
+}
+
+.iconContact{
+    width: 10%;
+}
+
+.li{
+    display: flex;
+    align-items: flex-end;
+    gap: 0.2rem;
+    margin: 0.4rem 0;
+}
+
+.social{
+    width: 18%;
+}
+
+.titleSocial{
+    text-align: start;
+    
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.iconSocial{
+    width: 15%;
+}
+
+.derechosContainer{
+    margin: 2rem 0;
+    width: 90%;
+}
+
+.derechos{
+    opacity: 0.6;
+    font-size: 0.8rem;
+}

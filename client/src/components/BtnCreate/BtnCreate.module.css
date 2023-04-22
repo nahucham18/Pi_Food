@@ -2,6 +2,7 @@
     color: #FCF9BE;
     margin: 0 0 0.4rem 0;
     text-align: start;
+    cursor:default;
 }
 
 .btns{
@@ -14,6 +15,7 @@
 }
 
 .btnReset{
+    cursor: pointer;
     width: fit-content;
     font-weight: 900;
     margin: 0.2rem;
@@ -28,9 +30,12 @@
     -ms-border-radius: 0.4rem;
     -o-border-radius: 0.4rem;
 }
+.btnReset:hover{
+    background-color: #fdf66f;
+}
 
 .btnCreate{
-    
+    cursor: pointer;
     font-weight: 900;
     margin: 0.2rem;
     border: none;
@@ -42,6 +47,10 @@
     -moz-border-radius: 0.4rem;
     -ms-border-radius: 0.4rem;
     -o-border-radius: 0.4rem;
+}
+
+.btnCreate:hover{
+    background-color: #fdf66f;
 }
 
 .container{

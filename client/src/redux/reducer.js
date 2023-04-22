@@ -48,28 +48,17 @@ const reducer =(state = initialState,action)=>{
             }
 
         case ORDER:
-            if(action.payload === "Ascendente")
-                return {
-                    ...state,
-                    recipesFilter: [...state.recipesFilter.sort((a, b) => a.id > b.id)]
-                }
-
-            if(action.payload === "Descendente")
-            return {
-                ...state,
-                recipesFilter: [...state.recipes.slice().sort((a,b)=> a.id < b.id)]
-            }
 
             if(action.payload === "A-Z")
             return {
                 ...state,
-                recipesFilter: [...state.recipes.slice().sort((a,b)=> a.title.toLowerCase() > b.title.toLowerCase())]
+                recipesFilter: [...state.recipesFilter.slice().sort((a,b)=> a.title.toLowerCase() > b.title.toLowerCase())]
             }
 
             if(action.payload === "Z-A")
             return {
                 ...state,
-                recipesFilter: [...state.recipes.slice().sort((a,b)=> a.title.toLowerCase() < b.title.toLowerCase())]
+                recipesFilter: [...state.recipesFilter.slice().sort((a,b)=> a.title.toLowerCase() < b.title.toLowerCase())]
             }
 
             return {
@@ -81,12 +70,12 @@ const reducer =(state = initialState,action)=>{
             if(action.payload === '10')
             return {
                 ...state,
-                recipesFilter: state.recipes.slice().sort((a, b) => a.healthScore < b.healthScore)
+                recipesFilter: state.recipesFilter.slice().sort((a, b) => a.healthScore < b.healthScore)
             }
             if(action.payload === '0')
             return {
                 ...state,
-                recipesFilter: state.recipes.slice().sort((a,b)=> a.healthScore > b.healthScore)
+                recipesFilter: state.recipesFilter.slice().sort((a,b)=> a.healthScore > b.healthScore)
             }
             return {
                 ...state,

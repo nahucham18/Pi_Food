@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer/Footer';
 import NavBar from './components/NavBar/NavBar';
 import {Home,Landing,Detail,Form, Error, About} from './views'
 
@@ -22,6 +23,8 @@ function App() {
         <Route path='/error' element={<Error/>}/>
         <Route path='*' element={<Navigate to="/error"/>}/>
       </Routes>
+        {pathname!=='/' && pathname!=='/error' && <Footer/>}
+      
     </div>
   );
 }

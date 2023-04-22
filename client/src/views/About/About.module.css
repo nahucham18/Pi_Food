@@ -1,10 +1,31 @@
 .containerAbout{
-    padding: 7rem 2rem 4rem;
+    padding: 8rem 2rem 4rem;
 }
 .aboutMe{
     display: flex;
     justify-content: center;
     align-items: start;
+    width: 80%;
+    margin: 0 auto;
+
+    padding: 4rem 0;
+}
+
+.textAbout{
+    text-align: start;
+}
+
+.titleAbout{
+    text-align: start;
+    opacity: 0.6;
+    font-size: 2rem;
+    margin: 0;
+}
+.hrAbout{
+    color: #111;
+    opacity: 0.4;
+    width: 80%;
+    margin: 2rem auto;
 }
 
 .left{
@@ -12,8 +33,9 @@
 }
 
 .img{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
+    
     border: 1px solid black;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -27,8 +49,35 @@
 }
 
 .infoApp{
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
     margin: 0 auto;
+    
+    
+}
+.leftInfoApp{
+    box-sizing: border-box;
+    width: 50%;
+}
+.titleInfo{
+    text-align: start;
+    margin: 0;
+    font-size: 2rem;
+    
+    opacity: 0.6;
+}
+
+.textInfo{
+    text-align: start;
+    
+    width: 100%;
+}
+
+.imageLogo{
+    width: 40%;
+    height: fit-content;
 }
 
 .techApp{
@@ -76,6 +125,7 @@
     margin: 0;
     font-size: 2rem;
     padding: 1rem 0 0 3rem;
+    opacity: 0.6;
 }
 
 .nameTech{
@@ -83,5 +133,11 @@
     margin: 0;
     margin-left: 0.6rem;
     font-size: 1.6rem;
+    opacity: 0.6;
+}
+
+.text_p{
+    color: #111;
+    opacity: 0.8;
 }
 

@@ -1,8 +1,11 @@
 .container{
-    
+
+
 }
 
 .header{
+    position: relative;
+    box-sizing: border-box;
     background-image: url("https://images.unsplash.com/photo-1653233797467-1a528819fd4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,5 +14,7 @@
     height: 100vh;
     max-height: 300px;
     min-height: 50vh;
+
+    padding:9rem 0 0 3rem;
 
 }

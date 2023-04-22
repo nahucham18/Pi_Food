@@ -4,7 +4,6 @@ const Header = () =>{
     return (
         <div className={style.container}>
             <header className={style.header}>
-
             </header>
         </div>
     )
