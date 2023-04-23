@@ -6,6 +6,7 @@ const Landing = () =>{
     return (
         <div className={style.container}>
             <div className={style.landing}>
+                <img className={style.image} src={logo} alt="" />
                 <div className={style.intro}>
                     <div className={style.card}>
                         <h3 className={style.text_h}>Date el gusto de cocinar,</h3>
@@ -13,7 +14,6 @@ const Landing = () =>{
                     </div>
                     <Link className={style.btn_home}to={`/home`}>Home page</Link>
                 </div>
-                <img className={style.image} src={logo} alt="" />
             </div>
         </div>
     )

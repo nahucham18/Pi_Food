@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+
     
 }
 
@@ -21,7 +22,7 @@
     margin: 0.2rem;
     border: none;
     padding:0.2rem 1rem;
-    width: 80%;
+    width: 100%;
     background-color: #FCF9BE;
     border-radius: 0.4rem;
     -webkit-border-radius: 0.4rem;
@@ -54,7 +55,7 @@
 
 .container{
     
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -68,5 +69,11 @@
     }
     .titleCreate{
         margin: 0 0 0.4rem 0; 
+    }
+
+    .container{
+    
+        width: 80%;
+        margin: 0 auto;
     }
 }

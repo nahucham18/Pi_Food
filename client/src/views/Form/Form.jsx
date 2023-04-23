@@ -160,30 +160,33 @@ const Form = ({createComponent, create}) =>{
                                 <h6 className={errors.summary === 'No hay error' ? style.noError : style.error}>{errors.summary}</h6>
                             </div>
                         </div>
+                        
                     </div>
 
                     
                     <div className={style.rightUp}>
-                    <DietFilter handleOnChange={handleDiets} create={create}/>
-
+                        <div className={style.dietFilter}>
+                        <DietFilter handleOnChange={handleDiets} create={create}/>
+                        </div>
                     </div>
-
+                        
+                        
                 </div>
                     <hr />
                 <div className={style.down}>
 
                     <div className={style.leftDown}>
-                    <div className={style.labelInfoMain}>
+                    <div className={style.labelInfoSec}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Time in Minutes:</h4></label>
                                 <input className={style.inputSec} type="text"      name="readyInMinutes" onChange={handleOnChage} />
                                 <h6 className={errors.readyInMinutes === 'No hay error' ? style.noError : style.error}>{errors.readyInMinutes}</h6>
                             </div>
-                            <div className={style.labelInfoMain}>
-                                <label  htmlFor=""><h4 className={style.titleLabel}>Servings:</h4></label>
+                            <div className={style.labelInfoSec}>
+                                <label  htmlFor=""><h4 className={style.titleLabel}>Portion:</h4></label>
                                 <input className={style.inputSec} type="text" name="servings" onChange={handleOnChage}/>
                             <h6 className={errors.servings === 'No hay error' ? style.noError : style.error}>{errors.servings}</h6>
                             </div>
-                            <div className={style.labelInfoMain}>
+                            <div className={style.labelInfoSec}>
                                 <label  htmlFor=""><h4 className={style.titleLabel}>Price per serving:</h4> </label>
                                 <input className={style.inputSec} type="text" name="pricePerServing" onChange={handleOnChage}/>
                                 <h6 className={errors.pricePerServing === 'No hay error' ? style.noError : style.error}>{errors.pricePerServing}</h6>
