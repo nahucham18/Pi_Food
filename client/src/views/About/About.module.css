@@ -1,9 +1,13 @@
 .containerAbout{
     padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .aboutMe{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
     align-items: start;
     width: 80%;
     margin: 0 auto;
@@ -29,10 +33,11 @@
 }
 
 .left{
-    width: 50%;
+    width: 100%;
 }
 
 .img{
+    margin: 0 auto 2rem;
     width: 200px;
     height: 200px;
     
@@ -51,6 +56,8 @@
 .infoApp{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
     align-items: center;
     width: 90%;
     margin: 0 auto;
@@ -59,7 +66,7 @@
 }
 .leftInfoApp{
     box-sizing: border-box;
-    width: 50%;
+    width: 100%;
 }
 .titleInfo{
     text-align: start;
@@ -76,7 +83,7 @@
 }
 
 .imageLogo{
-    width: 40%;
+    width: 80%;
     height: fit-content;
 }
 
@@ -101,7 +108,7 @@
 
 .tech{
     box-sizing: border-box;
-    width: 45%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.4);
 
     padding: 1rem;
@@ -139,5 +146,33 @@
 .text_p{
     color: #111;
     opacity: 0.8;
+}
+
+@media(min-width:576px){
+    .aboutMe{
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .tech{
+        width: 100%;
+    }
+    .infoApp{
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .leftInfoApp{
+        width: 50%;
+    }
+    .imageLogo{
+        width: 40%;
+    }
+    .left{
+        width: 50%;
+    }
+}
+@media(min-width:768px){
+    .tech{
+        width: 45%;
+    }
 }
 
