@@ -7,22 +7,33 @@
 
 .detail{
     box-sizing: border-box;
-    padding: 2rem;
+    padding:1rem 0;
     background-color: rgba(1, 1, 1, 0.7);
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
 
 }
 
 .left{
-    width: 60%;
+    width: 100%;
     box-sizing: border-box;
     padding: 0 1rem;
 }
 
+.imageLeft{
+    width: 70%;
+    max-width: 350px;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+}
+
 .title, .summary{
-    text-align: start;
+    text-align: center;
     
 }
 
@@ -46,7 +57,7 @@
     border: 1px solid #FCF9BE;
     
     text-align: start;
-    padding:1rem 3rem 2rem;
+    padding:0.4rem;
 
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -73,15 +84,18 @@
 
 .rigth{
     box-sizing: border-box;
-    width: 40%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
 
 }
 
 .image{
+    display: none;
     width: 100%;
+    max-width: 400px;
     border-radius: 0.4rem;
     -webkit-border-radius: 0.4rem;
     -moz-border-radius: 0.4rem;
@@ -142,11 +156,70 @@
     box-sizing: border-box;
     width: 100%;
     text-align: start;
-    padding: 2rem;
+    padding: 1rem;
     border: 1px solid #F4EEB1;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+}
+
+@media (min-width:576px){
+    .detail{
+        width: 90%;
+        padding: 2rem;
+        flex-wrap: wrap;
+
+    }
+    .left{
+        width: 100%;
+    }
+
+    .steps{
+        padding:1rem 3rem 2rem;
+    }
+
+    .rigth{
+        width: 100%;
+    }
+
+    
+}
+@media (min-width:768px){
+    .detail{
+        width: 90%;
+    }
+    .left{
+        width: 100%;
+    }
+    
+    
+ 
+}
+@media (min-width:992px){
+    .detail{
+        width: 80%;
+        flex-wrap: nowrap;
+    }
+    .title, .summary{
+        text-align: start;
+        
+    }
+
+    .steps{
+        padding:1rem
+    }
+
+    .left{
+        width: 100%;
+    }
+
+    .imageLeft{
+        display: none;
+    }
+
+    .image{
+        display: block;
+    }
 }

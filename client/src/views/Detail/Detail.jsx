@@ -40,6 +40,7 @@ const Detail = () =>{
             <div className={style.detail}>
 
                 <div className={style.left}>
+                <img className={style.imageLeft} src={recipeID.image} alt="" />
                 <h1 className={style.title}>{recipeID.title}</h1>
                 <p className={style.summary}>{recipeID.summary?.replace(/<[^>]*>/g, "")}</p>
                 <div className={style.steps}>
