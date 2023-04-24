@@ -2,10 +2,13 @@ import { Link } from "react-router-dom"
 import style from './NavBar.module.css'
 import { useEffect, useState } from "react"
 import logo from '../../assets/logo.png'
+import Menu from "../../views/Menu/Menu"
+import menuHamb from '../../assets/menu-black.png'
 
 const NavBar = () =>{
 
     const [navFixed, setNavFixed] = useState(false);
+    const [menu, setMenu] = useState(false);
 
     const navOnChange = () =>{
             if(window.scrollY > 0){
@@ -17,9 +20,20 @@ const NavBar = () =>{
 
     window.addEventListener('scroll',navOnChange)
 
+    const handleMenu =()=>{
+        menu && setMenu(false)
+        !menu && setMenu(true)
+        
+    }
 
+    console.log(menu);
     return (
         <div >
+            {
+                menu
+                ? <Menu handleMenu={handleMenu}/>
+                : <></>
+            }
             <nav className={navFixed ? style.containerFixed : style.container}>
                 
                 <div className={style.nav}>
@@ -44,9 +58,9 @@ const NavBar = () =>{
                             conocenos
                         </Link>
                     </div>
-                    <Link>
-                        <div className={style.menuHamb}></div>
-                    </Link>
+                        <div className={style.menuHamb}>
+                            <img className={style.iconHamb} src={menuHamb} alt="menu"  onClick={handleMenu}/>
+                        </div>
                 </div>
             </nav>
         </div>

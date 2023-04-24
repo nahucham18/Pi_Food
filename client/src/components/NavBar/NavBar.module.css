@@ -96,10 +96,30 @@
 }
 
 .menuHamb{
+    box-sizing: border-box;
     display: block;
-    width: 20px;
-    height: 20px;
-    background-color: black;
+
+    cursor: pointer;
+}
+
+
+.iconHamb{
+    padding: 0.4rem;
+    width: 40%;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+}
+
+.iconHamb:hover{
+
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
 }
 
 
@@ -112,7 +132,7 @@
     margin: 0 1rem;
     text-decoration: none;
     color: #111;
-
+    border-bottom: 1px solid transparent;
 }
 .link:hover{
     border-bottom: 1px solid black;
