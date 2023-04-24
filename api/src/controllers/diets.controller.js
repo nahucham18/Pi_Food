@@ -9,23 +9,15 @@ module.exports = {
             const dietApi = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`)
         
         // console.log(dietApi.data.results);
+        dietApi.data.results.forEach((recipe)=>{
+            if(recipe.vegetarian === true ){
+                recipe.diets = [...recipe.diets,"vegetarian"]
+            }
+        })
         const diet = dietApi.data.results.flatMap((el) => el.diets);
         const arr = new Set(diet);
-        const diets = [...arr,"vegetarian"]
-        // dietApi.data.results.forEach((element)=>{
-        // if(element.vegetarian) diet.push("vegetarian")
-        // if(element.pescatarian) diet.push("pescatarian")
-        // if(element.ketogenic) diet.push("ketogenic")
-        // })
-        // let data2 = diet.flat();
-        // const typeDiet = [...new Set(data2)];
 
-        // typeDiet.forEach((el) => {
-        // Diet.findOrCreate({
-        //                 where: { name: el },
-        //                 });
-        //     });
-        diets.forEach((el)=>{
+        arr.forEach((el)=>{
             Diet.findOrCreate({
                 where: {name:el},
             });

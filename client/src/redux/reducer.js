@@ -41,7 +41,6 @@ const reducer =(state = initialState,action)=>{
             }
 
         case SEARCH_RECIPE:
-            console.log('wenas');
             return{
                 ...state,
                 recipesFilter: state.recipes.filter(recipe => recipe.title.toLowerCase().includes(action.payload))

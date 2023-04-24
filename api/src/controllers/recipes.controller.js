@@ -158,7 +158,7 @@ const getAllRecipes = async() =>{
 const searchRecipeByName = async(name) =>{
     const allRecipes = await getAllRecipes()
 
-    const recipeByName = allRecipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));    
+    const recipeByName = allRecipes.filter((recipe) => recipe.title.toLowerCase().includes(name.toLowerCase()));    
     if(recipeByName.length >0)return recipeByName;
     throw new Error('Recipe not found')
 }
