@@ -49,8 +49,8 @@ const NavBar = () =>{
 
                     <div className={style.menu}>
                         <Link className={style.link} to="/home">Home</Link>
-                        <Link className={style.link} to={'/'}>Diets</Link>
                         <Link className={style.link} to="/about">About</Link>
+                        <Link className={style.link} to={'/'}>Landing</Link>
                     </div>
 
                     <div className={style.about}>

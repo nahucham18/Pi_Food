@@ -7,6 +7,7 @@ import { getRecipeID,cleanRecipeId } from '../../redux/actions';
 import dolar from '../../assets/dolar.png'
 import serving from '../../assets/serving.png'
 import timer from '../../assets/timer.png'
+import Loading from '../../components/Loading/Loading';
 
 const Detail = () =>{
     const {id} = useParams();
@@ -37,6 +38,9 @@ const Detail = () =>{
     },[recipeID])
     return (
         <div className={style.container}>
+            {
+                Object.entries(recipeID).length !== 0
+                ? 
             <div className={style.detail}>
 
                 <div className={style.left}>
@@ -109,6 +113,8 @@ const Detail = () =>{
 
 
             </div>
+            : <Loading/>
+            }
         </div>
     )
 }
