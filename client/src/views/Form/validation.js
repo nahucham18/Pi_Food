@@ -1,4 +1,4 @@
-const validation = (recipesData) =>{
+const validation = (recipesData,recipes) =>{
     let errors = {
         name:'No hay error',
         image:'No hay error',
@@ -16,11 +16,14 @@ const validation = (recipesData) =>{
         errors.name = 'No puede estar vacio';
     }
     
+    let notName =  recipes.filter((recipe) => recipe.title.toLowerCase() === recipesData.name.toLowerCase())
+    if(notName.length>0) {
+        errors.name = 'Ya existe en las recetas'
+    }
 
     if(!/^(?:https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i.test(recipesData.image)){
         errors.image = 'Tiene que ser una URL';
     }
-    console.log(recipesData.image)
     if(recipesData.image.length === 0){
         errors.image = 'No puede estar vacio'
     }

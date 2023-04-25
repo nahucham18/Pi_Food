@@ -134,6 +134,7 @@
 
 .iconDolar, .iconTimer{
     width: 90%;
+    min-width: 50px;
 }
 
 .icon{

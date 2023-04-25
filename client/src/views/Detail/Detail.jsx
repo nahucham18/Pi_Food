@@ -69,19 +69,35 @@ const Detail = () =>{
                 <div className={style.rigth}>
                 <img className={style.image} src={recipeID.image} alt="" />
                 <div className={style.desc}>
-                        <div className={style.uni}>
-                            <img className={style.icon} src={serving} alt="" />
-                            <span className={style.infoIcon}>{`${recipeID.servings}`}</span>
-                        </div>
-                    <div className={style.uni}>
-                        <img className={style.iconTimer} src={timer} alt="" />
-                        <span className={style.infoIcon}>{`${recipeID.readyInMinutes}'`}</span>
-                    </div>
-                        <div className={style.uni}>
-                            <img className={style.iconDolar} src={dolar} alt="" />
-                            <span className={style.infoIcon}>{`${recipeID.pricePerServing}`}</span>
+                        {
+                            recipeID.servings > 0
+                            ?
+                            <div className={style.uni}>
+                                <img className={style.icon} src={serving} alt="" />
+                                <span className={style.infoIcon}>{`${recipeID.servings}`}</span>
+                            </div>
+
+                            : <></>
+                        }
                         
-                    </div>
+                        {
+                            recipeID.readyInMinutes === 0 ? <></>
+                    
+                    : <div className={style.uni}>
+                    <img className={style.iconTimer} src={timer} alt="" />
+                    <span className={style.infoIcon}>{`${recipeID.readyInMinutes}'`}</span>
+                </div>
+                        }
+                        {
+                            recipeID.pricePerServing > 0 
+                            ?
+                            <div className={style.uni}>
+                                <img className={style.iconDolar} src={dolar} alt="" />
+                                <span className={style.infoIcon}>{`${recipeID.pricePerServing}`}</span>
+                            </div>
+                            : <></>
+
+                        }
                 </div>
                     {
                         ingredients[0] !== undefined ?

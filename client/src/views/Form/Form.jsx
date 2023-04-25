@@ -5,9 +5,11 @@ import axios from 'axios';
 import DietFilter from '../../components/DietFilter/DietFilter';
 import MessageForm from '../../components/MessageForm/MessageForm';
 import MessageError from '../../components/MessageError/MessageError';
+import { useSelector } from 'react-redux';
 
 const Form = ({createComponent, create}) =>{
 
+    const {recipes} = useSelector(state=>state)
     const [steps, setStepts] = useState([])
     const [stepsInput, setSteptsInput] = useState("")
     const [createRecipe, setCreateRecipe] = useState(false);
@@ -19,9 +21,9 @@ const Form = ({createComponent, create}) =>{
         summary:'',
         healthScore:'',
         diets:[],
-        readyInMinutes:0,
-        servings:0,
-        pricePerServing:0,
+        readyInMinutes:"",
+        servings:"",
+        pricePerServing:"",
     })
 
 
@@ -45,7 +47,7 @@ const Form = ({createComponent, create}) =>{
         setErrors(validation({
             ...recipeData,
             [event.target.name]: event.target.value,
-        }))
+        },recipes))
     }
 
     const handleSteps = (event) =>{
@@ -92,7 +94,7 @@ const Form = ({createComponent, create}) =>{
 
         const hasErrors = Object.values(errors).every(error => error === "No hay error")
 
-        if (hasErrors) {
+        if (hasErrors && recipeData.name.length>0) {
         const post = {
                 title:recipeData.name,
                 image:recipeData.image,
@@ -100,9 +102,9 @@ const Form = ({createComponent, create}) =>{
                 healthScore:recipeData.healthScore,
                 steps:steps,
                 dietTypes:recipeData.diets,
-                readyInMinutes:recipeData.readyInMinutes,
-                servings:recipeData.servings,
-                pricePerServing:recipeData.pricePerServing,
+                readyInMinutes:Number(recipeData.readyInMinutes),
+                servings:Number(recipeData.servings),
+                pricePerServing:Number(recipeData.pricePerServing),
         }
     
         axios

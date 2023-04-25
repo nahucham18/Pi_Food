@@ -84,9 +84,12 @@ const RecipesContainer = ({page, recipesFilter}) =>{
     //     ]
 
     const {pages} = useSelector(state=>state)
+    const {recipes} = useSelector(state=>state);
+    useEffect(()=>{
+        
+    },[recipes])
 
     const AllRecipes = pages[page-1]
-    console.log(AllRecipes);;
     return (
         <div className={style.container}>
             <div className={style.recipes_container}>

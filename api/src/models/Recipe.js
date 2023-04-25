@@ -12,6 +12,7 @@ module.exports = (sequelize) => {
     },
     title: {
       type: DataTypes.STRING,
+      unique:true,
       allowNull: false,
     },
     image:{
@@ -36,14 +37,17 @@ module.exports = (sequelize) => {
     readyInMinutes:{
       type: DataTypes.INTEGER,
       allowNull:true,
+      defaultValue:10,
     },
     servings:{
       type: DataTypes.INTEGER,
       allowNull:true,
+      defaultValue: 2,
     },
     pricePerServing:{
-      type: DataTypes.DECIMAL,
+      type: DataTypes.INTEGER,
       allowNull:true,
+      defaultValue:100,
     },
     created:{
       type: DataTypes.BOOLEAN,

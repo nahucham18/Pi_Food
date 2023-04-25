@@ -14,27 +14,7 @@
     margin: 0 auto;
 }
 
-.text_p{
-    box-sizing: border-box;
-    padding: 1rem;
-    width: 80%;
-    color: rgba(1, 1, 1, 0.8);
-    font-weight: 700;
-    text-align: start;
-    font-size: 1.2rem;
 
-    margin: 1rem;
-    border-radius: 1rem;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
-}
-
-.negrita{
-    color:goldenrod;
-    font-weight: 900;
-}
 
 @media(min-width:768px){
     .down{
