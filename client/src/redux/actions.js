@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_RECIPES, GET_RECIPE_ID, GET_DIETS, ORDER, GET_PAGE, GET_COPY, FILTER_HEALTH,FILTER_DIETS,FILTER_CREATE, SEARCH_RECIPE, RESET_PAGE,CLEAN_RECIPE_ID} from "./actions-types";
+import { GET_RECIPES, GET_RECIPE_ID,ADD_RECIPE, GET_DIETS, ORDER, GET_PAGE, GET_COPY, FILTER_HEALTH,FILTER_DIETS,FILTER_CREATE, SEARCH_RECIPE, RESET_PAGE,CLEAN_RECIPE_ID} from "./actions-types";
 
 const URL_BASE = "http://localhost:3001"
 
@@ -18,6 +18,10 @@ export const getRecipeID = (id) =>{
         dispatch({type:GET_RECIPE_ID, payload:recipes});
 
     }
+}
+
+export const addRecipe = (recipe) =>{
+    return ({type: ADD_RECIPE, payload:recipe})
 }
 
 export const cleanRecipeId = () =>{

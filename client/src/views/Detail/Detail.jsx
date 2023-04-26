@@ -1,7 +1,6 @@
 import style from './Detail.module.css'
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { getRecipeID,cleanRecipeId } from '../../redux/actions';
 import dolar from '../../assets/dolar.png'
@@ -10,8 +9,7 @@ import timer from '../../assets/timer.png'
 import Loading from '../../components/Loading/Loading';
 
 const Detail = () =>{
-    const {id} = useParams();
-    const [recipe,setRecipe] = useState({})   
+    const {id} = useParams();   
     const {recipeID} = useSelector(state=>state)
     const [ingredients, setIngredients] = useState([])
     const dispatch = useDispatch();
@@ -22,7 +20,6 @@ const Detail = () =>{
         const ingredietsArray = stepsArray?.flat().map(ingredient => ingredient?.name )
         const newIngredients =Array.from( new Set(ingredietsArray))
 
-        console.log("Estos son otros",newIngredients);
         setIngredients(newIngredients);
     }
 
@@ -34,7 +31,6 @@ const Detail = () =>{
     
     useEffect(()=>{
         getIngredients(recipeID)
-        console.log("Estos son los ingredientes",ingredients);
     },[recipeID])
     return (
         <div className={style.container}>
@@ -114,20 +110,7 @@ const Detail = () =>{
                     : <></>    
                 }
                 </div>
-
-
-                    {
-                        // console.log(recipe.analyzedInstructions[0].steps)}
-                        // recipe.analyzedInstructions[0].steps.map(step=>{
-                            //     return (
-                            //         <h2>{`${step.number} ${step.step}`}</h2>
-                            //     )
-                            // })
-
-                        
-                    }
-
-
+                
             </div>
             : <Loading/>
             }

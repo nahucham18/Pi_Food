@@ -1,14 +1,31 @@
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import style from './Pagination.module.css'
+import { useEffect, useState } from 'react';
 
+const Pagination = ({ onPageChange, active, page}) =>{
 
-const Pagination = ({arrayPages, onPageChange, active, page}) =>{
+    // const pages = [...Array(arrayPages).keys()].map(page=>page+1);
+
+    const {recipesFilter} = useSelector(state=>state)
+
+    const paginate = (array,pagesSize)=>{
+        return array.reduce((acc,val,index)=>{
+            const pageIndex = Math.floor(index/ pagesSize);
+            if(!acc[pageIndex]){
+                acc[pageIndex] = [];
+            }
+            acc[pageIndex].push(val);
+            return acc;
+        },[])
+    }
+
 
     
-    const pages = [...Array(arrayPages).keys()].map(page=>page+1);
-
+    const newArrayPage = paginate(recipesFilter,9)
     
+    const pages = [...Array(newArrayPage.length).keys()].map(page=>page+1);
+
     return (
         <div className={style.containerPag}>
             <button className={style.pageArrow} onClick={page > 1 ?()=> onPageChange(page-1):()=>console.log('')}>{"<"}</button>

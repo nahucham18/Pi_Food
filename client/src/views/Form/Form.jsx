@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import style from './Form.module.css'
 import validation from './validation'
 import axios from 'axios';
@@ -7,13 +7,17 @@ import MessageForm from '../../components/MessageForm/MessageForm';
 import MessageError from '../../components/MessageError/MessageError';
 import { useSelector } from 'react-redux';
 
+
 const Form = ({createComponent, create}) =>{
 
+
     const {recipes} = useSelector(state=>state)
+
     const [steps, setStepts] = useState([])
     const [stepsInput, setSteptsInput] = useState("")
     const [createRecipe, setCreateRecipe] = useState(false);
     const [error, setError] = useState(false);
+    const [post , setPost] = useState({})
     
     const [recipeData, setRecipeData] = useState({
         name:'',
@@ -91,10 +95,10 @@ const Form = ({createComponent, create}) =>{
 
     
     const handleSumbit = (event) =>{
-
         const hasErrors = Object.values(errors).every(error => error === "No hay error")
 
         if (hasErrors && recipeData.name.length>0) {
+
         const post = {
                 title:recipeData.name,
                 image:recipeData.image,
@@ -106,29 +110,26 @@ const Form = ({createComponent, create}) =>{
                 servings:Number(recipeData.servings),
                 pricePerServing:Number(recipeData.pricePerServing),
         }
+        setPost(post)
+        
     
         axios
             .post("http://localhost:3001/recipes",post)
             .then((response)=>{
                 console.log("Receta Creada", response.data);
             })
-            .catch((error)=>{
-                console.error("Error al crear receta:", error)
-            })
 
         setCreateRecipe(true)
         event.preventDefault()
-        
         }else{
             handleErrorMessage()
             event.preventDefault()
         }
     }
 
-
     return (
         <div className={style.container}>
-            {createRecipe ? <MessageForm createComponent={createComponent} createRecipe={createRecipe}/> : <></>}
+            {createRecipe ? <MessageForm post={post} createComponent={createComponent} createRecipe={createRecipe}/> : <></>}
             {
                 error ? <MessageError handleErrorMessage={handleErrorMessage}/> : <></>
             }
@@ -212,7 +213,7 @@ const Form = ({createComponent, create}) =>{
                                     {
                                     steps.map((step,index)=>{
                                     return(
-                                    <span className={style.step}>{`${index+1}. ${step}`}</span>
+                                    <span key={index + 1} className={style.step}>{`${index+1}. ${step}`}</span>
                                     )
                                     })
                                     }

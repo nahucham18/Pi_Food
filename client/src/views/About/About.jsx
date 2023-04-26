@@ -8,6 +8,7 @@ import express from '../../assets/express.png'
 import insomnia from '../../assets/insomnia2.png'
 import sequelize from '../../assets/sequelize2.png'
 import postgresql from '../../assets/postgresql.png'
+import perfil from '../../assets/perfil.jpg'
 
 const About = () =>{
     return(
@@ -18,7 +19,8 @@ const About = () =>{
                         <h1 className={style.titleAbout}>About me</h1>
                         <p className={style.textAbout}>Soy Nahuel Chamorro, desarrollador web fullstack con 27 años de edad. Resido en Rio Negro. Actualmente llevo a cabo el bootcamp Soy Henry, donde gracias a sus conocimientos y enseñanzas pude realizar este y otros proyectos. Espero adentrarme mas a este mundo del Desarrollo Web y poder contribuir en la comunidad de la Programación</p>
                     </div>
-                    <img className={style.img} src="#" alt="#" />
+                    <img className={style.img} src={perfil} alt="perfil" />
+                    
                 </div>
 
                 <hr className={style.hrAbout}/>

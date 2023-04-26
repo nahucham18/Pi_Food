@@ -12,15 +12,15 @@ import FilterBar from "../../components/FilterBar/FilterBar";
 import Loading from '../../components/Loading/Loading';
 import { resetPageAction } from '../../redux/actions';
 import FilterBarHor from '../../components/FilterBarHor/FilterBarHor';
-
+import {paginate} from './logic'
 
 
 const Home = () =>{
     const dispatch = useDispatch();
     
     const {recipes} = useSelector(state=>state)
-    const {diets} = useSelector(state=>state)
     const {recipesFilter} = useSelector(state=>state)
+    const {diets} = useSelector(state=>state)
     const {resetPage} = useSelector(state =>state)
 
     const [create ,setCreate] = useState(false);
@@ -50,6 +50,8 @@ const Home = () =>{
         create ? setCreate(false) : setCreate(true)
     }
     
+    const arrayPages = paginate(recipesFilter, 9);
+
     useEffect(()=>{
         if(resetPage){
             handlePageChange(1);
@@ -59,10 +61,9 @@ const Home = () =>{
         diets.length === 0 && dispatch(getDiets());
         dispatch(getPages(arrayPages))
     },[recipes, recipesFilter,])
+
     
-    
-    
-    const arrayPages = paginate(recipesFilter, 9);
+
     return (
         <div>
             {
@@ -70,10 +71,10 @@ const Home = () =>{
             }
             <Header/>
             
-            <div className={style.down}>
+            <main className={style.down}>
                 <FilterBar/>
                 <FilterBarHor/>
-                <div className={style.principal}>
+                <section className={style.principal}>
                     <SearchBar createComponent={createComponent}/>
                     <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active} page={page}/>
                     {
@@ -81,8 +82,8 @@ const Home = () =>{
                         : <Loading/>
                     }
                     <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active}/>
-                </div>
-            </div>
+                </section>
+            </main>
         </div>
     )
 }

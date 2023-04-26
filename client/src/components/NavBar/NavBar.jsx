@@ -26,7 +26,6 @@ const NavBar = () =>{
         
     }
 
-    console.log(menu);
     return (
         <div >
             {

@@ -1,5 +1,6 @@
 export const GET_RECIPES = "GET_RECIPES";
 export const GET_RECIPE_ID = "GET_RECIPE_ID";
+export const ADD_RECIPE = "ADD_RECIPE"
 export const CLEAN_RECIPE_ID = "CLEAN_RECIPE_ID"
 export const GET_DIETS = "GET_DIETS";
 export const GET_RECIPE = "GET_RECIPE";
