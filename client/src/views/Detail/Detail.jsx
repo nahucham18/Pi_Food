@@ -8,12 +8,17 @@ import serving from '../../assets/serving.png'
 import timer from '../../assets/timer.png'
 import Loading from '../../components/Loading/Loading';
 
-const Detail = () =>{
+const Detail = () =>{  
+
     const {id} = useParams();   
+
     const {recipeID} = useSelector(state=>state)
+
     const [ingredients, setIngredients] = useState([])
+
     const dispatch = useDispatch();
 
+    //Traigo los ingredientes de cada step de la recipe traida
     const getIngredients = (recipe)=>{
         if(!recipe) return
         const stepsArray = recipe?.steps?.map(step => step.ingredients)
@@ -32,6 +37,8 @@ const Detail = () =>{
     useEffect(()=>{
         getIngredients(recipeID)
     },[recipeID])
+    
+    console.log(recipeID.image);
     return (
         <div className={style.container}>
             {
@@ -40,7 +47,8 @@ const Detail = () =>{
             <div className={style.detail}>
 
                 <div className={style.left}>
-                <img className={style.imageLeft} src={recipeID.image} alt="" />
+                <img className={style.imageLeft} src={recipeID.image } alt="" />
+            
                 <h1 className={style.title}>{recipeID.title}</h1>
                 <p className={style.summary}>{recipeID.summary?.replace(/<[^>]*>/g, "")}</p>
                 <div className={style.steps}>

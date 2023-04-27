@@ -1,11 +1,12 @@
-import { useState } from 'react';
 import style from './Form.module.css'
-import validation from './validation'
 import axios from 'axios';
+import validation from './validation'
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+
 import DietFilter from '../../components/DietFilter/DietFilter';
 import MessageForm from '../../components/MessageForm/MessageForm';
 import MessageError from '../../components/MessageError/MessageError';
-import { useSelector } from 'react-redux';
 
 
 const Form = ({createComponent, create}) =>{
@@ -18,7 +19,6 @@ const Form = ({createComponent, create}) =>{
     const [createRecipe, setCreateRecipe] = useState(false);
     const [error, setError] = useState(false);
     const [post , setPost] = useState({})
-    
     const [recipeData, setRecipeData] = useState({
         name:'',
         image:'',
@@ -29,11 +29,8 @@ const Form = ({createComponent, create}) =>{
         servings:"",
         pricePerServing:"",
     })
-
-
     const [errors, setErrors] = useState({
         name:'No hay error',
-        image:'No hay error',
         summary:'No hay error',
         healthScore:'No hay error',
         readyInMinutes:'No hay error',
@@ -41,19 +38,22 @@ const Form = ({createComponent, create}) =>{
         pricePerServing:'No hay error',
     })
 
+    //Funcion para cargar el dato ingresado en el input al estado local de recipeData
     const handleOnChage = (event) =>{
+        //Setear los valores al estado local , segun el atributo name de cada imputo
         setRecipeData({
             ...recipeData,
             [event.target.name]: event.target.value
         })
 
-    
+        //Valida los posibles errores que podrian aparecer mediante la funcion "validation"
         setErrors(validation({
             ...recipeData,
             [event.target.name]: event.target.value,
         },recipes))
     }
 
+    //Funciones que manejan el estado del step------------------------------------
     const handleSteps = (event) =>{
         setSteptsInput(event.target.value)
     }
@@ -78,6 +78,9 @@ const Form = ({createComponent, create}) =>{
         event.preventDefault();
     }
 
+    //----------------------------------------------------------------------------
+
+    //Funcion para agregar al estado de recipeData , la propiedad diets con sus respectivas dietas
     const handleDiets = (diets) =>{
         setRecipeData({
             ...recipeData,
@@ -85,6 +88,8 @@ const Form = ({createComponent, create}) =>{
         })
     }
 
+
+    // Para contrar el Mensaje De Error
     const handleErrorMessage = () =>{
         if(error){
             setError(false)
@@ -94,7 +99,8 @@ const Form = ({createComponent, create}) =>{
     }
 
     
-    const handleSumbit = (event) =>{
+    //Funcion cuando se hace el sumbit
+    const handleSubmit = (event) =>{
         const hasErrors = Object.values(errors).every(error => error === "No hay error")
 
         if (hasErrors && recipeData.name.length>0) {
@@ -112,7 +118,6 @@ const Form = ({createComponent, create}) =>{
         }
         setPost(post)
         
-    
         axios
             .post("http://localhost:3001/recipes",post)
             .then((response)=>{
@@ -133,7 +138,7 @@ const Form = ({createComponent, create}) =>{
             {
                 error ? <MessageError handleErrorMessage={handleErrorMessage}/> : <></>
             }
-            <form className={style.form}action=""onSubmit={handleSumbit}>
+            <form className={style.form}action=""onSubmit={handleSubmit}>
             <button className={style.btnClose} onClick={()=>createComponent()}>x</button>
                 
                 <h2 className={style.title}>Creemos una receta</h2>

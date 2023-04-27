@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 import style from './Recipe.module.css';
-                            // key={index+1}
-                                // id={recipe.id}
-                                // name={recipe.name}
-                                // image={recipe.image}
-                                // healthScore={recipe.healthScore}
-                                // diets={recipe.diets}
+                            
 const Recipe = ({id,title,image,healthScore,diets,created}) =>{
     return (
         <div className={style.divRecipe}>
@@ -22,7 +17,6 @@ const Recipe = ({id,title,image,healthScore,diets,created}) =>{
                             <span className={Number(healthScore) > 50 ? style.healthScore : style.nohealthScore}>{healthScore}</span>
                     </div>
                     <div className={style.recipeDown}>
-                
                         {
                         
                             diets?.map((diet,index)=> {

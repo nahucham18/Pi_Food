@@ -5,7 +5,6 @@ module.exports = (sequelize)=>{
         name:{
             type: DataTypes.STRING,
             unique: true,
-            leng: [1, 50],
             allowNull: false,
         },
     },{

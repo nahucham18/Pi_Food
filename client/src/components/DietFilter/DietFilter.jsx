@@ -11,12 +11,14 @@ const DietFilter = ({handleOnChange, create}) =>{
     const dispatch = useDispatch()
 
     const handleDietChange = (event) =>{
-        const { value, checked} = event.target;
-        if(checked){
-            setSelected([...selected,value]);
-        }else{
-            setSelected(selected.filter((diet => diet !== value)))
-        }
+        
+
+            const { value, checked} = event.target;
+            if(checked){
+                setSelected([...selected,value]);
+            }else{
+                setSelected(selected.filter((diet => diet !== value)))
+            }
         
     }
 
@@ -31,7 +33,7 @@ const DietFilter = ({handleOnChange, create}) =>{
         if(!create){
             dispatch(filterDiets(selected))
         }
-        
+            
     },[selected])
     
     return (

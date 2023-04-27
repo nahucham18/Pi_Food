@@ -1,4 +1,4 @@
-import { GET_RECIPES,GET_RECIPE_ID,ADD_RECIPE, ORDER, GET_PAGE, GET_DIETS, FILTER_HEALTH, SEARCH_RECIPE, FILTER_DIETS, FILTER_CREATE, RESET_PAGE,CLEAN_RECIPE_ID} from "./actions-types";
+import {GET_RECIPES,GET_RECIPE_ID,ADD_RECIPE, ORDER, GET_PAGE, GET_DIETS, FILTER_HEALTH, SEARCH_RECIPE, FILTER_DIETS, FILTER_CREATE, RESET_PAGE,CLEAN_RECIPE_ID} from "./actions-types";
 
 const initialState=({
                     recipes:[],
@@ -11,7 +11,6 @@ const initialState=({
 
 const reducer =(state = initialState,action)=>{
     switch(action.type){
-        
         case GET_RECIPES:
             return {
                 ...state,
@@ -111,11 +110,11 @@ const reducer =(state = initialState,action)=>{
             }
             if(action.payload === 'api')return{
                 ...state,
-                recipesFilter: state.recipes.filter(recipe=>recipe.created === false)
+                recipesFilter: state.recipesFilter.slice().filter(recipe=>recipe.created === false)
             }
             if(action.payload === 'bdd')return{
                 ...state,
-                recipesFilter: state.recipes.filter(recipe=>recipe.created === true)
+                recipesFilter: state.recipesFilter.slice().filter(recipe=>recipe.created === true)
             }
             return {
                 ...state,

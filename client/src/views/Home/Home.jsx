@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import RecipesContainer from "../../components/RecipesContainer/RecipesContainer";
 import { getPages, getRecipes, getDiets } from "../../redux/actions";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Pagination from "../../components/Pagination/Pagination";
@@ -12,7 +11,6 @@ import FilterBar from "../../components/FilterBar/FilterBar";
 import Loading from '../../components/Loading/Loading';
 import { resetPageAction } from '../../redux/actions';
 import FilterBarHor from '../../components/FilterBarHor/FilterBarHor';
-import {paginate} from './logic'
 
 
 const Home = () =>{
@@ -23,9 +21,13 @@ const Home = () =>{
     const {diets} = useSelector(state=>state)
     const {resetPage} = useSelector(state =>state)
 
+
+    //Estado para el manejo del renderizado del componente DietFilter
     const [create ,setCreate] = useState(false);
+    //estados que uso tmb para el recipeContainer y para los filtrados--
     const [page, setPage] = useState(1);
     const [active, setActive] = useState(page)
+    //------------------------------------------------------------------
 
     
     

@@ -22,7 +22,6 @@ const cleanArrayBdd=(arrayBdd)=>
                 };
                 }),
             diets: recipe.Diets.map((diet)=> diet.name)
-            
         }
     })
 
@@ -131,7 +130,6 @@ const getRecipeById = async(id, source) =>{
             return cleanRecipe
         }
 
-    return recipe;
 }
 const getAllRecipes = async() =>{
     const databaseRecipes = await Recipe.findAll({

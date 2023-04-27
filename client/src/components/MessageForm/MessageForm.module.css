@@ -52,6 +52,7 @@
 }
 
 .btn{
+    cursor: pointer;
     background-color: #57aa4c;
     color: #ddd;
     border: none;
@@ -63,6 +64,10 @@
     -moz-border-radius: 0.6rem;
     -ms-border-radius: 0.6rem;
     -o-border-radius: 0.6rem;
+}
+
+.btn:hover{
+    background-color: #6bb863;
 }
 
 @media(min-width:992px){

@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux'
 import style from './FilterBar.module.css'
 import DietFilter from '../DietFilter/DietFilter';
 import OrderFilter from '../OrderFilter/OrderFilter';
@@ -6,7 +5,6 @@ import BtnCreate from '../BtnCreate/BtnCreate';
 
 const FilterBar = () =>{
 
-    const {diets} = useSelector(state=>state)
     return (
         <div className={style.containerFilter}>
             

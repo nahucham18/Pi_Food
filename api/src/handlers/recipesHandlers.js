@@ -1,6 +1,6 @@
 const {createRecipe ,getRecipeById , getAllRecipes, searchRecipeByName} = require('../controllers/recipes.controller')
 
-
+//Handler por si recibe una query o no .
 const getRecipesHandler = async(req,res) =>{
     const { name } = req.query;
     try {
@@ -12,6 +12,8 @@ const getRecipesHandler = async(req,res) =>{
     }
 }
 
+
+//Handler de la ruta que recibe un params .
 const getRecipesByIdHandler = async(req,res)=>{
     const {id} = req.params;
     const source = isNaN(id) ? "bdd" : "api";
@@ -24,6 +26,9 @@ const getRecipesByIdHandler = async(req,res)=>{
     }
 }
 
+
+
+//Handler de la ruta Post ,para crear la nueva receta.
 const postRecipesHandler= async(req,res)=>{
     const {title,image,summary,healthScore,steps,readyInMinutes,servings,pricePerServing, dietTypes} = req.body;
     try {
