@@ -40,7 +40,7 @@
 
 @media (min-width:576px){
     .header{
-        height: 60vh;
+        height: 90vh;
         align-items: flex-end;
         }
     .text_p{
