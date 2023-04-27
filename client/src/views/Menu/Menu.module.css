@@ -12,7 +12,7 @@
 .menu{
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items:flex-start;
     width: 100%;
     margin: 0 auto;
 }

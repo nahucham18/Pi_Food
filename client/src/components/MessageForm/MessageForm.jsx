@@ -1,7 +1,5 @@
 import style from './MessageForm.module.css'
 import check from '../../assets/check.png'
-import { useDispatch } from 'react-redux'
-import { addRecipe } from '../../redux/actions'
 
 const MessageForm = ({createComponent , post}) =>{
 

@@ -1,5 +1,3 @@
-
-import { useDispatch, useSelector } from 'react-redux'
 import style from './Pagination.module.css'
 
 

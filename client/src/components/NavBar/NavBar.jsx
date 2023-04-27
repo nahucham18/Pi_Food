@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import style from './NavBar.module.css'
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import logo from '../../assets/logo.png'
 import Menu from "../../views/Menu/Menu"
 import menuHamb from '../../assets/menu-black.png'
