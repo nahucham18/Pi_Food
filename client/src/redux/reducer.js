@@ -110,11 +110,11 @@ const reducer =(state = initialState,action)=>{
             }
             if(action.payload === 'api')return{
                 ...state,
-                recipesFilter: state.recipesFilter.slice().filter(recipe=>recipe.created === false)
+                recipesFilter: state.recipes.slice().filter(recipe=>recipe.created === false)
             }
             if(action.payload === 'bdd')return{
                 ...state,
-                recipesFilter: state.recipesFilter.slice().filter(recipe=>recipe.created === true)
+                recipesFilter: state.recipes.slice().filter(recipe=>recipe.created === true)
             }
             return {
                 ...state,

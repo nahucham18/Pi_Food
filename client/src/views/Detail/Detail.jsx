@@ -7,8 +7,15 @@ import dolar from '../../assets/dolar.png'
 import serving from '../../assets/serving.png'
 import timer from '../../assets/timer.png'
 import Loading from '../../components/Loading/Loading';
+import { animateScroll as scroll, scroller} from 'react-scroll'
 
 const Detail = () =>{  
+
+    const scrollType = {   duration: 500,   delay: 50,   smooth: true, offset: -10};
+
+    const backInicio = () =>{
+        scroll.scrollToTop();
+      }
 
     const {id} = useParams();   
 
@@ -30,6 +37,7 @@ const Detail = () =>{
 
     useEffect(()=>{
         dispatch(getRecipeID(id))
+        backInicio()
         
         return ()=>{dispatch(cleanRecipeId())};
     },[id,dispatch]);
