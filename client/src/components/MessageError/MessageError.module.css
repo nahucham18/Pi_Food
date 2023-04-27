@@ -2,7 +2,7 @@
     position: fixed;
     
     width: 100%;
-    height: 100%;
+    
     padding-top:  50%;
     z-index: 4;
 }
@@ -52,6 +52,7 @@
 }
 
 .btn{
+    cursor: pointer;
     background-color: #EF3438;
     color: #ddd;
     border: none;
@@ -63,6 +64,9 @@
     -moz-border-radius: 0.6rem;
     -ms-border-radius: 0.6rem;
     -o-border-radius: 0.6rem;
+}
+.btn:hover{
+    background-color: #eb5456; 
 }
 
 @media(min-width:992px){

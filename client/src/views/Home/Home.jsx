@@ -11,6 +11,7 @@ import FilterBar from "../../components/FilterBar/FilterBar";
 import Loading from '../../components/Loading/Loading';
 import { resetPageAction } from '../../redux/actions';
 import FilterBarHor from '../../components/FilterBarHor/FilterBarHor';
+import { animateScroll as scroll, scroller} from 'react-scroll'
 
 
 const Home = () =>{
@@ -29,6 +30,11 @@ const Home = () =>{
     const [active, setActive] = useState(page)
     //------------------------------------------------------------------
 
+    const scrollType = {   duration: 100,   delay: 30,   smooth: true, offset: -10};
+
+    const backInicio = () =>{
+        scroll.scrollToTop();
+    }
     
     
     const paginate = (array,pagesSize)=>{
@@ -55,6 +61,7 @@ const Home = () =>{
     const arrayPages = paginate(recipesFilter, 9);
 
     useEffect(()=>{
+        backInicio()
         if(resetPage){
             handlePageChange(1);
             dispatch(resetPageAction(false))

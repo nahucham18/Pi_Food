@@ -8,9 +8,16 @@ import DietFilter from '../../components/DietFilter/DietFilter';
 import MessageForm from '../../components/MessageForm/MessageForm';
 import MessageError from '../../components/MessageError/MessageError';
 
+import { animateScroll as scroll, scroller} from 'react-scroll'
+
 
 const Form = ({createComponent, create}) =>{
 
+    const scrollType = {   duration: 500,   delay: 50,   smooth: true, offset: -10};
+
+    const backInicio = () =>{
+        scroll.scrollToTop();
+    }
 
     const {recipes} = useSelector(state=>state)
 
@@ -229,7 +236,7 @@ const Form = ({createComponent, create}) =>{
                 </div>
 
 
-                <button className={style.btnCreate}>Crear receta</button>
+                <button className={style.btnCreate} onClick={()=>{backInicio()}}>Crear receta</button>
                 </form>
         </div>
     )

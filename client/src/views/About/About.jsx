@@ -10,7 +10,21 @@ import sequelize from '../../assets/sequelize2.png'
 import postgresql from '../../assets/postgresql.png'
 import perfil from '../../assets/perfil.jpg'
 
+import { animateScroll as scroll, scroller} from 'react-scroll'
+import { useEffect } from 'react'
+
 const About = () =>{
+
+    const scrollType = {   duration: 100,   delay: 30,   smooth: true, offset: -10};
+
+    const backInicio = () =>{
+        scroll.scrollToTop();
+      }
+
+      useEffect(()=>{
+        backInicio()
+      },[])
+
     return(
         <div>
             <div className={style.containerAbout}>
