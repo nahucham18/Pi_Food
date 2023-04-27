@@ -11,7 +11,7 @@ import { animateScroll as scroll, scroller} from 'react-scroll'
 
 const Detail = () =>{  
 
-    const scrollType = {   duration: 500,   delay: 50,   smooth: true, offset: -10};
+    const scrollType = {   duration: 200,   delay: 30,   smooth: true, offset: -10};
 
     const backInicio = () =>{
         scroll.scrollToTop();
@@ -36,8 +36,8 @@ const Detail = () =>{
     }
 
     useEffect(()=>{
-        dispatch(getRecipeID(id))
         backInicio()
+        dispatch(getRecipeID(id))
         
         return ()=>{dispatch(cleanRecipeId())};
     },[id,dispatch]);
