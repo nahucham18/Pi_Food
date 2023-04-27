@@ -13,7 +13,7 @@
     position: relative;
     box-sizing: border-box;
     background-color: rgba(1, 1, 1, 0.9);
-    margin:2rem auto;
+    margin:6rem auto;
     width: 95%;
     max-width: 1000px;
     display: flex;

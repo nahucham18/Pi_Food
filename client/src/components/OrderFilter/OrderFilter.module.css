@@ -12,6 +12,7 @@
     border: none;
     padding:0.2rem 2rem;
     width: 45%;
+    max-width: 100px;
     background-color: #FCF9BE;
     border-radius: 0.4rem;
     -webkit-border-radius: 0.4rem;

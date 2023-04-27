@@ -23,6 +23,7 @@
     border: none;
     padding:0.2rem 1rem;
     width: 100%;
+    min-width: 100px;
     background-color: #FCF9BE;
     border-radius: 0.4rem;
     -webkit-border-radius: 0.4rem;
