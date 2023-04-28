@@ -2,8 +2,19 @@ import { Link } from "react-router-dom";
 import style from './Recipe.module.css';
 import heart from '../../assets/heart.png'
 import star from '../../assets/star.png'
+import {useDispatch} from 'react-redux'
+import { deleteRecipe } from "../../redux/actions";
                             
 const Recipe = ({id,title,image,healthScore,diets,created}) =>{
+
+
+    const dispatch = useDispatch()
+
+    const handleOnClose = (id)=>{
+        dispatch(deleteRecipe(id))
+    }
+
+
     return (
         <div className={style.divRecipe}>
             
@@ -12,7 +23,7 @@ const Recipe = ({id,title,image,healthScore,diets,created}) =>{
                     <div className={style.leftCard}>
                         <div className={style.imageContainer}>
                             {
-                                created ? <button className={style.btnClose}>X</button> : <></>
+                                created ? <button className={style.btnClose} onClick={()=>{handleOnClose(id)}}>X</button> : <></>
                             }
                             <img className={style.image} src={image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKmwKcebNu-EBvyrfLrYctaZaz-Jq_qCysTFuID_oMGThWWtN73hB--uyOx2AL8k-iYEk&usqp=CAU"} alt={title} />
                         </div>

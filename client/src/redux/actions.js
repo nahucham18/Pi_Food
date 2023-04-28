@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_RECIPES, GET_RECIPE_ID,ADD_RECIPE, GET_DIETS, ORDER, GET_PAGE, GET_COPY, FILTER_HEALTH,FILTER_DIETS,FILTER_CREATE, SEARCH_RECIPE, RESET_PAGE,CLEAN_RECIPE_ID} from "./actions-types";
+import { GET_RECIPES, GET_RECIPE_ID,ADD_RECIPE, GET_DIETS, ORDER, GET_PAGE, GET_COPY, FILTER_HEALTH,FILTER_DIETS,FILTER_CREATE, SEARCH_RECIPE, RESET_PAGE,CLEAN_RECIPE_ID,DELETE_RECIPE } from "./actions-types";
 
 const URL_BASE = "https://pi-food-node.onrender.com"
 
@@ -73,3 +73,12 @@ export const resetPageAction = (resp) =>{
 //             dispatch({type:GET_RECIPE, payload:recipe})
 //         }
 // }
+
+export const deleteRecipe = (id) =>{
+    return async function(dispatch){
+        let idDelete = (await axios.delete(`${URL_BASE}/recipes/${id}`)).data
+        dispatch({type:GET_DIETS, payload:idDelete});
+
+    }
+
+}
