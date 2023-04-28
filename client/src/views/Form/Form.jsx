@@ -126,7 +126,7 @@ const Form = ({createComponent, create}) =>{
         setPost(post)
         
         axios
-            .post("http://localhost:3001/recipes",post)
+            .post("https://pi-food-node.onrender.com/recipes",post)
             .then((response)=>{
                 console.log("Receta Creada", response.data);
             })
