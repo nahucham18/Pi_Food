@@ -1,10 +1,18 @@
+.container{
+    background-color: red;
+    height: 100vh;
+    
+    min-height: 576px;
+}
+
 .landing{
     box-sizing: border-box;
     background-image: url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80");
 
-    height: 100vh;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    border: 1px solid black;
 
     display: flex;
     flex-direction: column;
