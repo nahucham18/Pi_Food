@@ -134,13 +134,13 @@ align-items: center;
 }
 
 .healthScore{
-        font-size: 0.4rem;
+        font-size: 0.8rem;
         font-weight: 700;
         color: rgb(151, 240, 151)
 }
 
 .nohealthScore{
-    font-size: 0.4rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: rgb(241, 187, 85);
     
