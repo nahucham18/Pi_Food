@@ -77,7 +77,7 @@ export const resetPageAction = (resp) =>{
 export const deleteRecipe = (id) =>{
     return async function(dispatch){
         let idDelete = (await axios.delete(`${URL_BASE}/recipes/${id}`)).data
-        dispatch({type:GET_DIETS, payload:id});
+        dispatch({type:DELETE_RECIPE, payload:id});
 
     }
 
