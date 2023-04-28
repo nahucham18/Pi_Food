@@ -55,7 +55,7 @@ const Detail = () =>{
             <div className={style.detail}>
 
                 <div className={style.left}>
-                <img className={style.imageLeft} src={recipeID.image } alt="" />
+                <img className={style.imageLeft} src={recipeID.image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKmwKcebNu-EBvyrfLrYctaZaz-Jq_qCysTFuID_oMGThWWtN73hB--uyOx2AL8k-iYEk&usqp=CAU" } alt="" />
             
                 <h1 className={style.title}>{recipeID.title}</h1>
                 <p className={style.summary}>{recipeID.summary?.replace(/<[^>]*>/g, "")}</p>
@@ -79,7 +79,7 @@ const Detail = () =>{
 
 
                 <div className={style.rigth}>
-                <img className={style.image} src={recipeID.image} alt="" />
+                <img className={style.image} src={recipeID.image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKmwKcebNu-EBvyrfLrYctaZaz-Jq_qCysTFuID_oMGThWWtN73hB--uyOx2AL8k-iYEk&usqp=CAU"} alt="" />
                 <div className={style.desc}>
                         {
                             recipeID.servings > 0
