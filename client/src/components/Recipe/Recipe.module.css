@@ -24,7 +24,7 @@
 }
 
 .imageContainer{
-    
+    height: 100%;
     margin-bottom: 0.4rem;
     box-sizing: border-box;
     box-shadow: 2px 2px 6px #111;
