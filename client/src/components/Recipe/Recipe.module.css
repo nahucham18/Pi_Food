@@ -7,7 +7,8 @@
     width: 100%;
     min-width: 300px;
     min-height: 160px;
-    border:1px solid yellow;
+    
+    
     display: flex;
     gap: 0.6rem;
     align-items: flex-start;
@@ -19,11 +20,11 @@
     flex-direction: column;
     width: 50%;
     align-items: flex-start;
-    border: 1px solid blue;
+    
 }
 
 .imageContainer{
-    border: 1px solid red;
+    
     margin-bottom: 0.4rem;
     box-sizing: border-box;
     box-shadow: 2px 2px 6px #111;
@@ -38,29 +39,30 @@
 
 .image{
     width: 100%;
+    height: 100%;
+    min-height: 130px;
     object-fit: cover;
-    border-radius: 0.4rem;
-    -webkit-border-radius: 0.4rem;
-    -moz-border-radius: 0.4rem;
-    -ms-border-radius: 0.4rem;
-    -o-border-radius: 0.4rem;
+   
     transition: 0.3s ease-in-out;
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
     -ms-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
+    
+    
 }
 
 .iconsRecipe{
-    width: 100%;
+    margin: 0 auto;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }
 
 .containerHeart{
     box-sizing: border-box;
-    background-color: orange;
-    width: 15%;
+    
+    width: 18%;
     display: flex;
     align-items: center;
 }
@@ -90,13 +92,13 @@ align-items: center;
 
 .description{
     width: 50%;
-    background-color: green;
+    
 }
 
 .diet{
     font-size: 0.6rem;
     display: block;
-    color: #ddd;
+    color: rgba(229, 229, 229, 0.6);
     
     
 }
@@ -134,54 +136,30 @@ align-items: center;
 .healthScore{
         font-size: 0.4rem;
         font-weight: 700;
-        
+        color: rgb(151, 240, 151)
 }
 
 .nohealthScore{
     font-size: 0.4rem;
     font-weight: 700;
+    color: rgb(241, 187, 85);
     
 }
 
 @media (min-width:380px){
-    .divRecipe{
-        width: 70%;
-        border: 1px solid red;
-        
-    }
+    .leftCard{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        align-items: flex-start;
     
-    .recipe{
-        
-        width: 100%;
-        min-height: 305px;
-        
     }
-    
-    .imageContainer{
-        margin-bottom: 0.4rem;
-        box-sizing: border-box;
-        box-shadow: 2px 2px 6px #111;
-        height: 150px;
-        width: 100%;
-        min-width: 200px;
-        overflow: hidden;
-        border-radius: 1rem;
-        -webkit-border-radius: 1rem;
-        -moz-border-radius: 1rem;
-        -ms-border-radius: 1rem;
-        -o-border-radius: 1rem;
-    }
-    
+
     .image{
         height: 100%;
         width: 100%;
         object-fit: cover;
-        border-radius: 1rem;
         transition: 0.3s ease-in-out;
-        -webkit-border-radius: 1rem;
-        -moz-border-radius: 1rem;
-        -ms-border-radius: 1rem;
-        -o-border-radius: 1rem;
         -webkit-transition: 0.3s ease-in-out;
         -moz-transition: 0.3s ease-in-out;
         -ms-transition: 0.3s ease-in-out;
@@ -196,19 +174,6 @@ align-items: center;
         -o-transform: scale(1.2);
     }
     
-    
-    .diet{
-        font-size: 0.8rem;
-        display: block;
-        color: #ddd;
-        padding: 0.2rem 0.4rem;
-        background-color: gray;
-        border-radius: 0.6rem;
-        -webkit-border-radius: 0.6rem;
-        -moz-border-radius: 0.6rem;
-        -ms-border-radius: 0.6rem;
-        -o-border-radius: 0.6rem;
-    }
     
     .title{
         text-decoration: none;
@@ -236,6 +201,11 @@ align-items: center;
         margin: 0 auto;
         
     }
+    .diet{
+        font-size: 0.8rem;
+        
+        
+    }
     
     .recipeTop{
         display: flex;
@@ -243,52 +213,80 @@ align-items: center;
         align-items: flex-start;
     }
     
-    .healthScore{
-        padding: 0.2rem;
-        padding-top: 0.1rem;
-        font-weight: 900;
-        color: #111;
-        background-color: rgb(117, 248, 117);
-        border: 2px solid black;
-    
-    
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-    }
-    .nohealthScore{
-        padding: 0.2rem;
-        padding-top: 0.1rem;
-        font-weight: 900;
-        color: #111;
-        background-color: rgb(255, 193, 78);
-        border: 2px solid black;
-        
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
+    .text_h{
+        font-size: 1.2rem;
     }
 }
 
 @media(min-width:576px){
-    .divRecipe{
-        width: 45%;
-        max-width: 300px;
-    }
+    .healthScore{
+        font-size: 1rem;
+        font-weight: 700;
+        
+}
+
+.nohealthScore{
+    font-size: 1rem;
+    font-weight: 700;
+    
+}
+
+.leftCard{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: flex-start;
+
+}
 }
 @media(min-width:768px){
+
     .divRecipe{
-        width: 45%;
-        max-width: 250px;
+        width: 100%;
+        max-width: 700px;
+        
     }
+    
+
+    .leftCard{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: flex-start;
+    
+    }
+
+    .healthScore{
+        font-size: 0.8rem;
+        font-weight: 700;
+        
+}
+
+.nohealthScore{
+    font-size: 0.8rem;
+    font-weight: 700;
+    
+}
 }
 @media(min-width:992px){
     .divRecipe{
-        width: 30%;
-        max-width: 250px;
+        width: 48%;
+    }
+    
+    .image{
+        min-height: 140px;
+    }
+    .leftCard{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: flex-start;
+        
+    }
+}
+
+@media (min-width:1200px){
+    .divRecipe{
+        width: 32%;
     }
 }

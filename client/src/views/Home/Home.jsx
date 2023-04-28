@@ -84,7 +84,7 @@ const Home = () =>{
                         recipes.length !== 0 ? <RecipesContainer page={page} recipesFilter={recipesFilter}/> 
                         : <Loading/>
                     }
-                    <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active}/>
+                    <Pagination arrayPages={arrayPages.length} onPageChange={handlePageChange} active={active} page={page}/>
                 </section>
             </main>
         </div>
