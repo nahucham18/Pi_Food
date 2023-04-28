@@ -41,7 +41,7 @@ const DietFilter = ({handleOnChange, create}) =>{
             <h4 className={style.diets}>Diets</h4>
             <div className={style.filterDiets}>
                 {
-                    diets.map((diet)=>{
+                    diets?.map((diet)=>{
                         return (
                         <label htmlFor=""key={diet.name}>
                             <input type="checkbox" 
