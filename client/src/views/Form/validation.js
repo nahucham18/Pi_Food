@@ -21,12 +21,12 @@ const validation = (recipesData,recipes) =>{
         errors.name = 'Ya existe en las recetas'
     }
 
-    if(!/^(?:https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i.test(recipesData.image)){
-        errors.image = 'Tiene que ser una URL';
-    }
-    if(recipesData.image.length === 0){
-        errors.image = 'No puede estar vacio'
-    }
+    // if(!/^(?:https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i.test(recipesData.image)){
+    //     errors.image = 'Tiene que ser una URL';
+    // }
+    // if(recipesData.image.length === 0){
+    //     errors.image = 'No puede estar vacio'
+    // }
     if(!recipesData.summary){
         errors.summary = 'No puede estar vacio'
     }
