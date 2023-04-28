@@ -12,7 +12,7 @@ const Recipe = ({id,title,image,healthScore,diets,created}) =>{
 
     const handleOnClose = (id)=>{
         dispatch(deleteRecipe(id))
-        window.location.reload()
+        
     }
 
 
