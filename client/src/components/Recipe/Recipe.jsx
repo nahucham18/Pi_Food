@@ -24,7 +24,7 @@ const Recipe = ({id,title,image,healthScore,diets,created}) =>{
                     <div className={style.leftCard}>
                         <div className={style.imageContainer}>
                             {
-                                created ? <button className={style.btnClose} onClick={()=>{handleOnClose(id)}}>X</button> : <></>
+                                created ? <button className={style.btnClose} onClick={handleOnClose(id)}>X</button> : <></>
                             }
                             <img className={style.image} src={image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKmwKcebNu-EBvyrfLrYctaZaz-Jq_qCysTFuID_oMGThWWtN73hB--uyOx2AL8k-iYEk&usqp=CAU"} alt={title} />
                         </div>
